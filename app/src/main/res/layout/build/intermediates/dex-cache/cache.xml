@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Prabowo\.android\build-cache\c0d38698e465cee9209c04273dcccb11cf7d95f1\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="C:\Users\Prabowo\Downloads\Nongkie\app\build\intermediates\pre-dexed\debug\classes_8ed6996b9c45da500d4d439c408776e32d8897ff.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Prabowo\.android\build-cache\ad1403791ed323065b6347686bb0dcce00f166d1\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="27777b3cad3c20b1acab19f6e37fe3e03371bf6e">
+        <dex dex="C:\Users\Prabowo\Downloads\Nongkie\app\build\intermediates\pre-dexed\debug\classes_782002e682e8548f239c23c2638abeb0f1bcd25d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Prabowo\.android\build-cache\e2ebc79651563f53850dbae2ca400c04449d886b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="C:\Users\Prabowo\Downloads\Nongkie\app\build\intermediates\pre-dexed\debug\classes_7dd057855430d738da4fcd06c6b034cab48a50e3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Prabowo\.android\build-cache\d4fbbe83ee4113ceebd108a5dd67c20eefa7f17c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="C:\Users\Prabowo\Downloads\Nongkie\app\build\intermediates\pre-dexed\debug\classes_3d4ac664e382788059d2abca9466922e43b9f732.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Prabowo\.android\build-cache\bf0380f3394de2f54c177045b5caff22a6748b1e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8010ae6ed32828a145b25ec97bc07b7a83c6318f">
+        <dex dex="C:\Users\Prabowo\Downloads\Nongkie\app\build\intermediates\pre-dexed\debug\classes_6c5bd12be4151f4006fa517151e559aedb25c5ab.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Prabowo\.android\build-cache\1c8749a29cb80e3ff631c4193b21b3ed702924d2\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="C:\Users\Prabowo\Downloads\Nongkie\app\build\intermediates\pre-dexed\debug\classes_326ea4346d7500a46020b152f9ae2b72fe39f1ba.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Prabowo\.android\build-cache\878eb35a75b54c5a42e433b7c6d5d287eb2fd7d6\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="C:\Users\Prabowo\Downloads\Nongkie\app\build\intermediates\pre-dexed\debug\classes_85c7451ce1bce7cc713bb6f5ce0b8b3b17ea3f50.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Prabowo\.android\build-cache\58b8d2ec2a01f2887c8979ba76490ba1eb231486\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8f128aeeb7e31271b28a7adb9dac1f3a6ed9f5e7">
+        <dex dex="C:\Users\Prabowo\Downloads\Nongkie\app\build\intermediates\pre-dexed\debug\classes_37bf109d9959c2087421985f04b15937df8a0037.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Prabowo\.android\build-cache\0b94f9a08cecd4a6eeb172615f907ec954bb2888\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="C:\Users\Prabowo\Downloads\Nongkie\app\build\intermediates\pre-dexed\debug\classes_771b2296ffcf7f791bfb209c3ece15982f587f2a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Prabowo\.android\build-cache\8de950ff3dcc748d2b8f251f4de732c5f1a9336e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="C:\Users\Prabowo\Downloads\Nongkie\app\build\intermediates\pre-dexed\debug\classes_4e113f256b01ac76cd8b8ebf489ae32bd837d8b9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Prabowo\.android\build-cache\524976bd307743655d0b76564d6a609c67f68876\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9cca2818594cc5348806d6662133491e7ea0fa8d">
+        <dex dex="C:\Users\Prabowo\Downloads\Nongkie\app\build\intermediates\pre-dexed\debug\classes_5b8066131ee30d511b7878e8c5563eed9beebab0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Prabowo\.android\build-cache\5eb82ce66a5638b825570c266c52f7186dcd11ad\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="662d7533b25a666c649c10a16b42edfb95f25a4f">
+        <dex dex="C:\Users\Prabowo\Downloads\Nongkie\app\build\intermediates\pre-dexed\debug\classes_3f950ecc3a86c888277ce90540dcb1a19b1a7c6f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Prabowo\.android\build-cache\a5afa3e38ccad27d7d35897a34913c7ccd6b6176\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44a694d4095be84c2888764b1f7256b385c030ad">
+        <dex dex="C:\Users\Prabowo\Downloads\Nongkie\app\build\intermediates\pre-dexed\debug\classes_92072571c7f13b58ede47fb1e4d18bd58c6c7850.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Prabowo\.android\build-cache\ce99566ce5292afa3f942eed6eb00ba7e283312c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="C:\Users\Prabowo\Downloads\Nongkie\app\build\intermediates\pre-dexed\debug\classes_dcd61f01b6d349e7bb1185abb3d11a1ef5a0bdbd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Prabowo\.android\build-cache\b25b9b80214aa55e2e1e7f4ecc896e88f1abf2c3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="09cf6aa1390f95157e8295d02be7868f568825fc">
+        <dex dex="C:\Users\Prabowo\Downloads\Nongkie\app\build\intermediates\pre-dexed\debug\classes_822e2399e3faa0dcf25b00a370919c0e478d83e1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Prabowo\.android\build-cache\570bdc6983a7265289e397aee3c1551b8bd8429a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="C:\Users\Prabowo\Downloads\Nongkie\app\build\intermediates\pre-dexed\debug\classes_267fc5c8bda4eaed0f069035334b2760ca5b15e5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Prabowo\.android\build-cache\ed90022ed45acbf2795b93f2018598c96b431a7f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="C:\Users\Prabowo\Downloads\Nongkie\app\build\intermediates\pre-dexed\debug\classes_28cc6428cf10812f00d3624843abbd6a738736b1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Prabowo\.android\build-cache\8cec1d81bd08650b7d00ece04ccada027daf63bb\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="C:\Users\Prabowo\Downloads\Nongkie\app\build\intermediates\pre-dexed\debug\classes_62e78787419c578c3be290fe695864d59854a5cf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Prabowo\.android\build-cache\6884ebda05c58b8be2e277c77ac6c9468099d1e9\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="C:\Users\Prabowo\Downloads\Nongkie\app\build\intermediates\pre-dexed\debug\classes_ec4286d79c0ebd22a7c245ba396e5b6e990449cb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Prabowo\.android\build-cache\d3b06b646f76648e6927f6af3a57e12c1958888c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="dd39827d2067497e60e21da48a7926000b6d4b0c">
+        <dex dex="C:\Users\Prabowo\Downloads\Nongkie\app\build\intermediates\pre-dexed\debug\classes_ea88c009edefa11aa7207a72bfa0ffb4b03cfec7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Prabowo\.android\build-cache\620a9a3af5004b20b12f66614e0525867a12f714\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\Prabowo\Downloads\Nongkie\app\build\intermediates\pre-dexed\debug\classes_1280274e4941786b0acc8c734dac76352957ea8c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Prabowo\.android\build-cache\bfa6e5cb374b4892b0861b8994dcaf7253b62538\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="C:\Users\Prabowo\Downloads\Nongkie\app\build\intermediates\pre-dexed\debug\classes_18771cb67f1bcc812ae15959848115d06085e305.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Prabowo\.android\build-cache\19984b446bb636ae35183ac5af69fabddbb86ed4\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Prabowo\Downloads\Nongkie\app\build\intermediates\pre-dexed\debug\classes_269f8ec6e649836cc7f352c422f691afcb5e6211.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Prabowo\.android\build-cache\d05149c08de3f749f6ddf25a8714fa72e2114527\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="C:\Users\Prabowo\Downloads\Nongkie\app\build\intermediates\pre-dexed\debug\classes_0f936e7eb1c0eb67bd247c15cb1f35c977a120dd.jar" />
+    </item>
+
+</items>

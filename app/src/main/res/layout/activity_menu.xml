@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+
+    android:orientation="vertical"
+    tools:context="com.example.prabowo.promethee.PreferensiActivity">
+
+    <TableLayout
+        android:layout_gravity="center"
+        android:id="@+id/tableLayoutMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:id="@+id/rowLay"
+            android:background="@color/colorPrimaryDark"
+            android:padding="2dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:text="Kriteria" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Bobot" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Preferensi" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Batas1" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Batas2" />
+
+
+
+        </TableRow>
+
+
+    </TableLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btpro"
+                android:textStyle="bold"
+                android:id="@+id/buttonSelesai"
+                android:layout_width="30mm"
+                android:layout_height="7mm"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:text="Proses Promethee" />
+
+            <ImageButton
+                android:background="@drawable/bthasil"
+                android:textStyle="bold"
+                android:id="@+id/buttonHasil"
+                android:layout_width="30mm"
+                android:layout_height="7mm"
+                android:layout_gravity="center"
+                android:text="Proses Promethee" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:background="@drawable/bttambah"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="30mm"
+                android:layout_height="7mm"
+                android:text="Hapus"
+                android:id="@+id/buttonTambahShow"
+                android:layout_gravity="center"/>
+
+
+            <ImageButton
+               android:background="@drawable/bthapus"
+                android:layout_width="30mm"
+                android:layout_height="7mm"
+                android:text="Tambah"
+                android:id="@+id/buttonHapusShow"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingTop="8dp">
+
+
+        <!--  Nama Species -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/TextAppearence.App.TextInputLayout">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/editHapus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Hapus baris ke-"
+                android:inputType="number"
+                android:textColor="#000"
+
+                android:visibility="gone"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hapus"
+            android:id="@+id/buttonHapus"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:theme="@style/TextAppearence.App.TextInputLayout">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/editTambah1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Kriteria"
+                android:textColor="#000"
+
+                android:inputType="textCapSentences"
+                android:visibility="gone"/>
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:theme="@style/TextAppearence.App.TextInputLayout">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/editTambah2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Bobot"
+                android:inputType="number"
+                android:textColor="#000"
+                android:visibility="gone"/>
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:theme="@style/TextAppearence.App.TextInputLayout">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/editTambah3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tipe Preferensi"
+                android:inputType="number"
+                android:textColor="#000"
+                android:visibility="gone"/>
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:theme="@style/TextAppearence.App.TextInputLayout">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/editBatas1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Batas 1"
+                android:inputType="number"
+                android:textColor="#000"
+                android:visibility="gone"/>
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:theme="@style/TextAppearence.App.TextInputLayout">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/editBatas2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Batas 2"
+                android:inputType="number"
+                android:textColor="#000"
+                android:visibility="gone"/>
+        </android.support.design.widget.TextInputLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tambah"
+            android:id="@+id/buttonTambah"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>
