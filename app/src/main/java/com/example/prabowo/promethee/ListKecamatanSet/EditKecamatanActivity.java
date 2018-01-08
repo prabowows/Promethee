@@ -9,8 +9,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.prabowo.promethee.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import static com.example.prabowo.promethee.ListKecamatanSet.SetKecamatanActivity.countKriteria;
 
@@ -118,10 +123,13 @@ public class EditKecamatanActivity extends AppCompatActivity {
         CheckNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatabaseReference event = mRootref.child("Kecamatan");
+                final DatabaseReference event = mRootref.child("Kecamatan");
                 switch (countKriteria) {
+
+
+
                     case 10:
-                        if(Integer.parseInt(KKT1.getText().toString())<1000)
+                        /*if(Integer.parseInt(KKT1.getText().toString())<1000)
                         event.child(id).child(nama10).setValue(1);
                         else if(Integer.parseInt(KKT1.getText().toString())<2000)
                             event.child(id).child(nama10).setValue(2);
@@ -130,91 +138,364 @@ public class EditKecamatanActivity extends AppCompatActivity {
                         else if(Integer.parseInt(KKT1.getText().toString())<4000)
                             event.child(id).child(nama10).setValue(4);
                         else if(Integer.parseInt(KKT1.getText().toString())>4000)
-                            event.child(id).child(nama10).setValue(5);
+                            event.child(id).child(nama10).setValue(5);*/
+
+
+                        DatabaseReference kriteria = mRootref.child("Kriteria");
+                        kriteria.addValueEventListener(new ValueEventListener() {
+
+
+                            @Override
+                            public void onDataChange(DataSnapshot snapshot) {
+                                if( snapshot.child(nama10).child("Kaidah").getValue().toString().equals("max")){
+                                    if(Integer.parseInt(KKT1.getText().toString())<Integer.parseInt(snapshot.child(nama10).child("Batas").child("BatasI").getValue().toString()))
+                                        event.child(id).child(nama10).setValue(1);
+                                    else if(Integer.parseInt(KKT1.getText().toString())<Integer.parseInt(snapshot.child(nama10).child("Batas").child("BatasII").getValue().toString()))
+                                        event.child(id).child(nama10).setValue(2);
+                                    else if(Integer.parseInt(KKT1.getText().toString())<Integer.parseInt(snapshot.child(nama10).child("Batas").child("BatasIII").getValue().toString()))
+                                        event.child(id).child(nama10).setValue(3);
+                                    else if(Integer.parseInt(KKT1.getText().toString())<Integer.parseInt(snapshot.child(nama10).child("Batas").child("BatasIV").getValue().toString()))
+                                        event.child(id).child(nama10).setValue(4);
+                                    else if(Integer.parseInt(KKT1.getText().toString())>Integer.parseInt(snapshot.child(nama10).child("Batas").child("BatasV").getValue().toString()))
+                                        event.child(id).child(nama10).setValue(5);}
+
+                                else{
+                                    if(Integer.parseInt(KKT1.getText().toString())<Integer.parseInt(snapshot.child(nama10).child("Batas").child("BatasI").getValue().toString()))
+                                        event.child(id).child(nama10).setValue(5);
+                                    else if(Integer.parseInt(KKT1.getText().toString())<Integer.parseInt(snapshot.child(nama10).child("Batas").child("BatasII").getValue().toString()))
+                                        event.child(id).child(nama10).setValue(4);
+                                    else if(Integer.parseInt(KKT1.getText().toString())<Integer.parseInt(snapshot.child(nama10).child("Batas").child("BatasIII").getValue().toString()))
+                                        event.child(id).child(nama10).setValue(3);
+                                    else if(Integer.parseInt(KKT1.getText().toString())<Integer.parseInt(snapshot.child(nama10).child("Batas").child("BatasIV").getValue().toString()))
+                                        event.child(id).child(nama10).setValue(2);
+                                    else if(Integer.parseInt(KKT1.getText().toString())>Integer.parseInt(snapshot.child(nama10).child("Batas").child("BatasV").getValue().toString()))
+                                        event.child(id).child(nama10).setValue(1);}
+
+
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+
+
+                        });
+
+
+
                     case 9:
-                        if(Integer.parseInt(KK91.getText().toString())<1000)
-                        event.child(id).child(nama9).setValue(1);
-                        else if(Integer.parseInt(KK91.getText().toString())<2000)
-                            event.child(id).child(nama9).setValue(2);
-                        else if(Integer.parseInt(KK91.getText().toString())<3000)
-                            event.child(id).child(nama9).setValue(3);
-                        else if(Integer.parseInt(KK91.getText().toString())<4000)
-                            event.child(id).child(nama9).setValue(4);
-                        else if(Integer.parseInt(KK91.getText().toString())>4000)
-                            event.child(id).child(nama9).setValue(5);
+
+                        kriteria = mRootref.child("Kriteria");
+                        kriteria.addValueEventListener(new ValueEventListener() {
+
+
+                            @Override
+                            public void onDataChange(DataSnapshot snapshot) {
+                                if( snapshot.child(nama9).child("Kaidah").getValue().toString().equals("max")){
+                                    if(Integer.parseInt(KK91.getText().toString())<Integer.parseInt(snapshot.child(nama9).child("Batas").child("BatasI").getValue().toString()))
+                                        event.child(id).child(nama9).setValue(1);
+                                    else if(Integer.parseInt(KK91.getText().toString())<Integer.parseInt(snapshot.child(nama9).child("Batas").child("BatasII").getValue().toString()))
+                                        event.child(id).child(nama9).setValue(2);
+                                    else if(Integer.parseInt(KK91.getText().toString())<Integer.parseInt(snapshot.child(nama9).child("Batas").child("BatasIII").getValue().toString()))
+                                        event.child(id).child(nama9).setValue(3);
+                                    else if(Integer.parseInt(KK91.getText().toString())<Integer.parseInt(snapshot.child(nama9).child("Batas").child("BatasIV").getValue().toString()))
+                                        event.child(id).child(nama9).setValue(4);
+                                    else if(Integer.parseInt(KK91.getText().toString())>Integer.parseInt(snapshot.child(nama9).child("Batas").child("BatasV").getValue().toString()))
+                                        event.child(id).child(nama9).setValue(5);}
+
+                                else{
+                                    if(Integer.parseInt(KK91.getText().toString())<Integer.parseInt(snapshot.child(nama9).child("Batas").child("BatasI").getValue().toString()))
+                                        event.child(id).child(nama9).setValue(5);
+                                    else if(Integer.parseInt(KK91.getText().toString())<Integer.parseInt(snapshot.child(nama9).child("Batas").child("BatasII").getValue().toString()))
+                                        event.child(id).child(nama9).setValue(4);
+                                    else if(Integer.parseInt(KK91.getText().toString())<Integer.parseInt(snapshot.child(nama9).child("Batas").child("BatasIII").getValue().toString()))
+                                        event.child(id).child(nama9).setValue(3);
+                                    else if(Integer.parseInt(KK91.getText().toString())<Integer.parseInt(snapshot.child(nama9).child("Batas").child("BatasIV").getValue().toString()))
+                                        event.child(id).child(nama9).setValue(2);
+                                    else if(Integer.parseInt(KK91.getText().toString())>Integer.parseInt(snapshot.child(nama9).child("Batas").child("BatasV").getValue().toString()))
+                                        event.child(id).child(nama9).setValue(1);}
+
+
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+
+
+                        });
+
+
                     case 8:
-                        if(Integer.parseInt(KK81.getText().toString())<1000)
-                            event.child(id).child(nama8).setValue(1);
-                        else if(Integer.parseInt(KK81.getText().toString())<2000)
-                            event.child(id).child(nama8).setValue(2);
-                        else if(Integer.parseInt(KK81.getText().toString())<3000)
-                            event.child(id).child(nama8).setValue(3);
-                        else if(Integer.parseInt(KK81.getText().toString())<4000)
-                            event.child(id).child(nama8).setValue(4);
-                        else if(Integer.parseInt(KK81.getText().toString())>4000)
-                            event.child(id).child(nama8).setValue(5);
+
+                        kriteria = mRootref.child("Kriteria");
+                        kriteria.addValueEventListener(new ValueEventListener() {
+
+
+                            @Override
+                            public void onDataChange(DataSnapshot snapshot) {
+                                if( snapshot.child(nama8).child("Kaidah").getValue().toString().equals("max")){
+                                    if(Integer.parseInt(KK81.getText().toString())<Integer.parseInt(snapshot.child(nama8).child("Batas").child("BatasI").getValue().toString()))
+                                        event.child(id).child(nama8).setValue(1);
+                                    else if(Integer.parseInt(KK81.getText().toString())<Integer.parseInt(snapshot.child(nama8).child("Batas").child("BatasII").getValue().toString()))
+                                        event.child(id).child(nama8).setValue(2);
+                                    else if(Integer.parseInt(KK81.getText().toString())<Integer.parseInt(snapshot.child(nama8).child("Batas").child("BatasIII").getValue().toString()))
+                                        event.child(id).child(nama8).setValue(3);
+                                    else if(Integer.parseInt(KK81.getText().toString())<Integer.parseInt(snapshot.child(nama8).child("Batas").child("BatasIV").getValue().toString()))
+                                        event.child(id).child(nama8).setValue(4);
+                                    else if(Integer.parseInt(KK81.getText().toString())>Integer.parseInt(snapshot.child(nama8).child("Batas").child("BatasV").getValue().toString()))
+                                        event.child(id).child(nama8).setValue(5);}
+
+                                else{
+                                    if(Integer.parseInt(KK81.getText().toString())<Integer.parseInt(snapshot.child(nama8).child("Batas").child("BatasI").getValue().toString()))
+                                        event.child(id).child(nama8).setValue(5);
+                                    else if(Integer.parseInt(KK81.getText().toString())<Integer.parseInt(snapshot.child(nama8).child("Batas").child("BatasII").getValue().toString()))
+                                        event.child(id).child(nama8).setValue(4);
+                                    else if(Integer.parseInt(KK81.getText().toString())<Integer.parseInt(snapshot.child(nama8).child("Batas").child("BatasIII").getValue().toString()))
+                                        event.child(id).child(nama8).setValue(3);
+                                    else if(Integer.parseInt(KK81.getText().toString())<Integer.parseInt(snapshot.child(nama8).child("Batas").child("BatasIV").getValue().toString()))
+                                        event.child(id).child(nama8).setValue(2);
+                                    else if(Integer.parseInt(KK81.getText().toString())>Integer.parseInt(snapshot.child(nama8).child("Batas").child("BatasV").getValue().toString()))
+                                        event.child(id).child(nama8).setValue(1);}
+
+
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+
+
+                        });
+
+
 
                     case 7:
-                        event.child(id).child(nama7).setValue(KK71.getText().toString());
-                        if(Integer.parseInt(KK71.getText().toString())<1000)
-                            event.child(id).child(nama7).setValue(1);
-                        else if(Integer.parseInt(KK71.getText().toString())<2000)
-                            event.child(id).child(nama7).setValue(2);
-                        else if(Integer.parseInt(KK71.getText().toString())<3000)
-                            event.child(id).child(nama7).setValue(3);
-                        else if(Integer.parseInt(KK71.getText().toString())<4000)
-                            event.child(id).child(nama7).setValue(4);
-                        else if(Integer.parseInt(KK71.getText().toString())>4000)
-                            event.child(id).child(nama7).setValue(5);
+                        kriteria = mRootref.child("Kriteria");
+
+                        kriteria.addValueEventListener(new ValueEventListener() {
+
+
+                            @Override
+                            public void onDataChange(DataSnapshot snapshot) {
+                                if( snapshot.child(nama7).child("Kaidah").getValue().toString().equals("max")){
+                                    if(Integer.parseInt(KK71.getText().toString())<Integer.parseInt(snapshot.child(nama7).child("Batas").child("BatasI").getValue().toString()))
+                                        event.child(id).child(nama7).setValue(1);
+                                    else if(Integer.parseInt(KK71.getText().toString())<Integer.parseInt(snapshot.child(nama7).child("Batas").child("BatasII").getValue().toString()))
+                                        event.child(id).child(nama7).setValue(2);
+                                    else if(Integer.parseInt(KK71.getText().toString())<Integer.parseInt(snapshot.child(nama7).child("Batas").child("BatasIII").getValue().toString()))
+                                        event.child(id).child(nama7).setValue(3);
+                                    else if(Integer.parseInt(KK71.getText().toString())<Integer.parseInt(snapshot.child(nama7).child("Batas").child("BatasIV").getValue().toString()))
+                                        event.child(id).child(nama7).setValue(4);
+                                    else if(Integer.parseInt(KK71.getText().toString())>Integer.parseInt(snapshot.child(nama7).child("Batas").child("BatasV").getValue().toString()))
+                                        event.child(id).child(nama7).setValue(5);}
+
+                                else{
+                                    if(Integer.parseInt(KK71.getText().toString())<Integer.parseInt(snapshot.child(nama7).child("Batas").child("BatasI").getValue().toString()))
+                                        event.child(id).child(nama7).setValue(5);
+                                    else if(Integer.parseInt(KK71.getText().toString())<Integer.parseInt(snapshot.child(nama7).child("Batas").child("BatasII").getValue().toString()))
+                                        event.child(id).child(nama7).setValue(4);
+                                    else if(Integer.parseInt(KK71.getText().toString())<Integer.parseInt(snapshot.child(nama7).child("Batas").child("BatasIII").getValue().toString()))
+                                        event.child(id).child(nama7).setValue(3);
+                                    else if(Integer.parseInt(KK71.getText().toString())<Integer.parseInt(snapshot.child(nama7).child("Batas").child("BatasIV").getValue().toString()))
+                                        event.child(id).child(nama7).setValue(2);
+                                    else if(Integer.parseInt(KK71.getText().toString())>Integer.parseInt(snapshot.child(nama7).child("Batas").child("BatasV").getValue().toString()))
+                                        event.child(id).child(nama7).setValue(1);}
+
+
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+
+
+                        });
+
+
                     case 6:
 
-                        if(Integer.parseInt(KK61.getText().toString())<1000)
-                            event.child(id).child(nama6).setValue(1);
-                        else if(Integer.parseInt(KK61.getText().toString())<2000)
-                            event.child(id).child(nama6).setValue(2);
-                        else if(Integer.parseInt(KK61.getText().toString())<3000)
-                            event.child(id).child(nama6).setValue(3);
-                        else if(Integer.parseInt(KK61.getText().toString())<4000)
-                            event.child(id).child(nama6).setValue(4);
-                        else if(Integer.parseInt(KK61.getText().toString())>4000)
-                            event.child(id).child(nama6).setValue(5);
-                    case 5:
+                        kriteria = mRootref.child("Kriteria");
 
-                        if(Integer.parseInt(KK51.getText().toString())<1000)
-                            event.child(id).child(nama5).setValue(1);
-                        else if(Integer.parseInt(KK51.getText().toString())<2000)
-                            event.child(id).child(nama5).setValue(2);
-                        else if(Integer.parseInt(KK51.getText().toString())<3000)
-                            event.child(id).child(nama5).setValue(3);
-                        else if(Integer.parseInt(KK51.getText().toString())<4000)
-                            event.child(id).child(nama5).setValue(4);
-                        else if(Integer.parseInt(KK51.getText().toString())>4000)
-                            event.child(id).child(nama5).setValue(5);
+                        kriteria.addValueEventListener(new ValueEventListener() {
+
+
+                            @Override
+                            public void onDataChange(DataSnapshot snapshot) {
+                                if( snapshot.child(nama6).child("Kaidah").getValue().toString().equals("max")){
+                                    if(Integer.parseInt(KK61.getText().toString())<Integer.parseInt(snapshot.child(nama6).child("Batas").child("BatasI").getValue().toString()))
+                                        event.child(id).child(nama6).setValue(1);
+                                    else if(Integer.parseInt(KK61.getText().toString())<Integer.parseInt(snapshot.child(nama6).child("Batas").child("BatasII").getValue().toString()))
+                                        event.child(id).child(nama6).setValue(2);
+                                    else if(Integer.parseInt(KK61.getText().toString())<Integer.parseInt(snapshot.child(nama6).child("Batas").child("BatasIII").getValue().toString()))
+                                        event.child(id).child(nama6).setValue(3);
+                                    else if(Integer.parseInt(KK61.getText().toString())<Integer.parseInt(snapshot.child(nama6).child("Batas").child("BatasIV").getValue().toString()))
+                                        event.child(id).child(nama6).setValue(4);
+                                    else if(Integer.parseInt(KK61.getText().toString())>Integer.parseInt(snapshot.child(nama6).child("Batas").child("BatasV").getValue().toString()))
+                                        event.child(id).child(nama6).setValue(5);}
+
+                                else{
+                                    if(Integer.parseInt(KK61.getText().toString())<Integer.parseInt(snapshot.child(nama6).child("Batas").child("BatasI").getValue().toString()))
+                                        event.child(id).child(nama6).setValue(5);
+                                    else if(Integer.parseInt(KK61.getText().toString())<Integer.parseInt(snapshot.child(nama6).child("Batas").child("BatasII").getValue().toString()))
+                                        event.child(id).child(nama6).setValue(4);
+                                    else if(Integer.parseInt(KK61.getText().toString())<Integer.parseInt(snapshot.child(nama6).child("Batas").child("BatasIII").getValue().toString()))
+                                        event.child(id).child(nama6).setValue(3);
+                                    else if(Integer.parseInt(KK61.getText().toString())<Integer.parseInt(snapshot.child(nama6).child("Batas").child("BatasIV").getValue().toString()))
+                                        event.child(id).child(nama6).setValue(2);
+                                    else if(Integer.parseInt(KK61.getText().toString())>Integer.parseInt(snapshot.child(nama6).child("Batas").child("BatasV").getValue().toString()))
+                                        event.child(id).child(nama6).setValue(1);}
+
+
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+
+
+                        });
+
+                    case 5:
+                        kriteria = mRootref.child("Kriteria");
+
+                        kriteria.addValueEventListener(new ValueEventListener() {
+
+
+                            @Override
+                            public void onDataChange(DataSnapshot snapshot) {
+                                if( snapshot.child(nama5).child("Kaidah").getValue().toString().equals("max")){
+                                    if(Integer.parseInt(KK51.getText().toString())<Integer.parseInt(snapshot.child(nama5).child("Batas").child("BatasI").getValue().toString()))
+                                        event.child(id).child(nama5).setValue(1);
+                                    else if(Integer.parseInt(KK51.getText().toString())<Integer.parseInt(snapshot.child(nama5).child("Batas").child("BatasII").getValue().toString()))
+                                        event.child(id).child(nama5).setValue(2);
+                                    else if(Integer.parseInt(KK51.getText().toString())<Integer.parseInt(snapshot.child(nama5).child("Batas").child("BatasIII").getValue().toString()))
+                                        event.child(id).child(nama5).setValue(3);
+                                    else if(Integer.parseInt(KK51.getText().toString())<Integer.parseInt(snapshot.child(nama5).child("Batas").child("BatasIV").getValue().toString()))
+                                        event.child(id).child(nama5).setValue(4);
+                                    else if(Integer.parseInt(KK51.getText().toString())>Integer.parseInt(snapshot.child(nama5).child("Batas").child("BatasV").getValue().toString()))
+                                        event.child(id).child(nama5).setValue(5);}
+
+                                else{
+                                    if(Integer.parseInt(KK51.getText().toString())<Integer.parseInt(snapshot.child(nama5).child("Batas").child("BatasI").getValue().toString()))
+                                        event.child(id).child(nama5).setValue(5);
+                                    else if(Integer.parseInt(KK51.getText().toString())<Integer.parseInt(snapshot.child(nama5).child("Batas").child("BatasII").getValue().toString()))
+                                        event.child(id).child(nama5).setValue(4);
+                                    else if(Integer.parseInt(KK51.getText().toString())<Integer.parseInt(snapshot.child(nama5).child("Batas").child("BatasIII").getValue().toString()))
+                                        event.child(id).child(nama5).setValue(3);
+                                    else if(Integer.parseInt(KK51.getText().toString())<Integer.parseInt(snapshot.child(nama5).child("Batas").child("BatasIV").getValue().toString()))
+                                        event.child(id).child(nama5).setValue(2);
+                                    else if(Integer.parseInt(KK51.getText().toString())>Integer.parseInt(snapshot.child(nama5).child("Batas").child("BatasV").getValue().toString()))
+                                        event.child(id).child(nama5).setValue(1);}
+
+
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+
+
+                        });
+
+
                     case 4:
 
-                        if(Integer.parseInt(KK41.getText().toString())<1000)
-                            event.child(id).child(nama4).setValue(1);
-                        else if(Integer.parseInt(KK41.getText().toString())<2000)
-                            event.child(id).child(nama4).setValue(2);
-                        else if(Integer.parseInt(KK41.getText().toString())<3000)
-                            event.child(id).child(nama4).setValue(3);
-                        else if(Integer.parseInt(KK41.getText().toString())<4000)
-                            event.child(id).child(nama4).setValue(4);
-                        else if(Integer.parseInt(KK41.getText().toString())>4000)
-                            event.child(id).child(nama4).setValue(5);
+                        kriteria = mRootref.child("Kriteria");
+
+                        kriteria.addValueEventListener(new ValueEventListener() {
+
+
+                            @Override
+                            public void onDataChange(DataSnapshot snapshot) {
+                                if( snapshot.child(nama4).child("Kaidah").getValue().toString().equals("max")){
+                                    if(Integer.parseInt(KK41.getText().toString())<Integer.parseInt(snapshot.child(nama4).child("Batas").child("BatasI").getValue().toString()))
+                                        event.child(id).child(nama4).setValue(1);
+                                    else if(Integer.parseInt(KK41.getText().toString())<Integer.parseInt(snapshot.child(nama4).child("Batas").child("BatasII").getValue().toString()))
+                                        event.child(id).child(nama4).setValue(2);
+                                    else if(Integer.parseInt(KK41.getText().toString())<Integer.parseInt(snapshot.child(nama4).child("Batas").child("BatasIII").getValue().toString()))
+                                        event.child(id).child(nama4).setValue(3);
+                                    else if(Integer.parseInt(KK41.getText().toString())<Integer.parseInt(snapshot.child(nama4).child("Batas").child("BatasIV").getValue().toString()))
+                                        event.child(id).child(nama4).setValue(4);
+                                    else if(Integer.parseInt(KK41.getText().toString())>Integer.parseInt(snapshot.child(nama4).child("Batas").child("BatasV").getValue().toString()))
+                                        event.child(id).child(nama4).setValue(5);}
+
+                                else{
+                                    if(Integer.parseInt(KK41.getText().toString())<Integer.parseInt(snapshot.child(nama4).child("Batas").child("BatasI").getValue().toString()))
+                                        event.child(id).child(nama4).setValue(5);
+                                    else if(Integer.parseInt(KK41.getText().toString())<Integer.parseInt(snapshot.child(nama4).child("Batas").child("BatasII").getValue().toString()))
+                                        event.child(id).child(nama4).setValue(4);
+                                    else if(Integer.parseInt(KK41.getText().toString())<Integer.parseInt(snapshot.child(nama4).child("Batas").child("BatasIII").getValue().toString()))
+                                        event.child(id).child(nama4).setValue(3);
+                                    else if(Integer.parseInt(KK41.getText().toString())<Integer.parseInt(snapshot.child(nama4).child("Batas").child("BatasIV").getValue().toString()))
+                                        event.child(id).child(nama4).setValue(2);
+                                    else if(Integer.parseInt(KK41.getText().toString())>Integer.parseInt(snapshot.child(nama4).child("Batas").child("BatasV").getValue().toString()))
+                                        event.child(id).child(nama4).setValue(1);}
+
+
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+
+
+                        });
+
+
                     case 3:
-                        if(Integer.parseInt(KK31.getText().toString())<1000)
-                        event.child(id).child(nama3).setValue(1);
-                        else if(Integer.parseInt(KK31.getText().toString())<2000)
-                            event.child(id).child(nama3).setValue(2);
-                        else if(Integer.parseInt(KK31.getText().toString())<3000)
-                            event.child(id).child(nama3).setValue(3);
-                        else if(Integer.parseInt(KK31.getText().toString())<4000)
-                            event.child(id).child(nama3).setValue(4);
-                        else if(Integer.parseInt(KK31.getText().toString())>4000)
-                            event.child(id).child(nama3).setValue(5);
+                        kriteria = mRootref.child("Kriteria");
+
+                        kriteria.addValueEventListener(new ValueEventListener() {
+
+
+                            @Override
+                            public void onDataChange(DataSnapshot snapshot) {
+                                if( snapshot.child(nama3).child("Kaidah").getValue().toString().equals("max")){
+                                    if(Integer.parseInt(KK31.getText().toString())<Integer.parseInt(snapshot.child(nama3).child("Batas").child("BatasI").getValue().toString()))
+                                        event.child(id).child(nama3).setValue(1);
+                                    else if(Integer.parseInt(KK31.getText().toString())<Integer.parseInt(snapshot.child(nama3).child("Batas").child("BatasII").getValue().toString()))
+                                        event.child(id).child(nama3).setValue(2);
+                                    else if(Integer.parseInt(KK31.getText().toString())<Integer.parseInt(snapshot.child(nama3).child("Batas").child("BatasIII").getValue().toString()))
+                                        event.child(id).child(nama3).setValue(3);
+                                    else if(Integer.parseInt(KK31.getText().toString())<Integer.parseInt(snapshot.child(nama3).child("Batas").child("BatasIV").getValue().toString()))
+                                        event.child(id).child(nama3).setValue(4);
+                                    else if(Integer.parseInt(KK31.getText().toString())>Integer.parseInt(snapshot.child(nama3).child("Batas").child("BatasV").getValue().toString()))
+                                        event.child(id).child(nama3).setValue(5);}
+
+                                else{
+                                    if(Integer.parseInt(KK31.getText().toString())<Integer.parseInt(snapshot.child(nama3).child("Batas").child("BatasI").getValue().toString()))
+                                        event.child(id).child(nama3).setValue(5);
+                                    else if(Integer.parseInt(KK31.getText().toString())<Integer.parseInt(snapshot.child(nama3).child("Batas").child("BatasII").getValue().toString()))
+                                        event.child(id).child(nama3).setValue(4);
+                                    else if(Integer.parseInt(KK31.getText().toString())<Integer.parseInt(snapshot.child(nama3).child("Batas").child("BatasIII").getValue().toString()))
+                                        event.child(id).child(nama3).setValue(3);
+                                    else if(Integer.parseInt(KK31.getText().toString())<Integer.parseInt(snapshot.child(nama3).child("Batas").child("BatasIV").getValue().toString()))
+                                        event.child(id).child(nama3).setValue(2);
+                                    else if(Integer.parseInt(KK31.getText().toString())>Integer.parseInt(snapshot.child(nama3).child("Batas").child("BatasV").getValue().toString()))
+                                        event.child(id).child(nama3).setValue(1);}
+
+
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+
+
+                        });
+
+
                     case 2:
-                        if(Integer.parseInt(KK21.getText().toString())<1000)
+                        /*if(Integer.parseInt(KK21.getText().toString())<1000)
                             event.child(id).child(nama2).setValue(1);
                         else if(Integer.parseInt(KK21.getText().toString())<2000)
                             event.child(id).child(nama2).setValue(2);
@@ -223,19 +504,98 @@ public class EditKecamatanActivity extends AppCompatActivity {
                         else if(Integer.parseInt(KK21.getText().toString())<4000)
                             event.child(id).child(nama2).setValue(4);
                         else if(Integer.parseInt(KK21.getText().toString())>4000)
-                            event.child(id).child(nama2).setValue(5);
+                            event.child(id).child(nama2).setValue(5);*/
+
+                        kriteria = mRootref.child("Kriteria");
+
+                        kriteria.addValueEventListener(new ValueEventListener() {
+
+
+                            @Override
+                            public void onDataChange(DataSnapshot snapshot) {
+                                if( snapshot.child(nama2).child("Kaidah").getValue().toString().equals("max")){
+                                    if(Integer.parseInt(KK21.getText().toString())<Integer.parseInt(snapshot.child(nama2).child("Batas").child("BatasI").getValue().toString()))
+                                        event.child(id).child(nama2).setValue(1);
+                                    else if(Integer.parseInt(KK21.getText().toString())<Integer.parseInt(snapshot.child(nama2).child("Batas").child("BatasII").getValue().toString()))
+                                        event.child(id).child(nama2).setValue(2);
+                                    else if(Integer.parseInt(KK21.getText().toString())<Integer.parseInt(snapshot.child(nama2).child("Batas").child("BatasIII").getValue().toString()))
+                                        event.child(id).child(nama2).setValue(3);
+                                    else if(Integer.parseInt(KK21.getText().toString())<Integer.parseInt(snapshot.child(nama2).child("Batas").child("BatasIV").getValue().toString()))
+                                        event.child(id).child(nama2).setValue(4);
+                                    else if(Integer.parseInt(KK21.getText().toString())>Integer.parseInt(snapshot.child(nama2).child("Batas").child("BatasV").getValue().toString()))
+                                        event.child(id).child(nama2).setValue(5);}
+
+                                else{
+                                    if(Integer.parseInt(KK21.getText().toString())<Integer.parseInt(snapshot.child(nama2).child("Batas").child("BatasI").getValue().toString()))
+                                        event.child(id).child(nama2).setValue(5);
+                                    else if(Integer.parseInt(KK21.getText().toString())<Integer.parseInt(snapshot.child(nama2).child("Batas").child("BatasII").getValue().toString()))
+                                        event.child(id).child(nama2).setValue(4);
+                                    else if(Integer.parseInt(KK21.getText().toString())<Integer.parseInt(snapshot.child(nama2).child("Batas").child("BatasIII").getValue().toString()))
+                                        event.child(id).child(nama2).setValue(3);
+                                    else if(Integer.parseInt(KK21.getText().toString())<Integer.parseInt(snapshot.child(nama2).child("Batas").child("BatasIV").getValue().toString()))
+                                        event.child(id).child(nama2).setValue(2);
+                                    else if(Integer.parseInt(KK21.getText().toString())>Integer.parseInt(snapshot.child(nama2).child("Batas").child("BatasV").getValue().toString()))
+                                        event.child(id).child(nama2).setValue(1);}
+
+
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+
+
+                        });
+
+
+
                     case 1:
 
-                        if(Integer.parseInt(KK11.getText().toString())<1000)
-                        event.child(id).child(nama1).setValue(1);
-                        else if(Integer.parseInt(KK11.getText().toString())<2000)
-                            event.child(id).child(nama1).setValue(2);
-                        else if(Integer.parseInt(KK11.getText().toString())<3000)
-                            event.child(id).child(nama1).setValue(3);
-                        else if(Integer.parseInt(KK11.getText().toString())<4000)
-                            event.child(id).child(nama1).setValue(4);
-                        else if(Integer.parseInt(KK11.getText().toString())>4000)
-                            event.child(id).child(nama1).setValue(5);
+                        kriteria = mRootref.child("Kriteria");
+
+                        kriteria.addValueEventListener(new ValueEventListener() {
+
+
+                            @Override
+                            public void onDataChange(DataSnapshot snapshot) {
+                                if( snapshot.child(nama1).child("Kaidah").getValue().toString().equals("max")){
+                                if(Integer.parseInt(KK11.getText().toString())<Integer.parseInt(snapshot.child(nama1).child("Batas").child("BatasI").getValue().toString()))
+                                    event.child(id).child(nama1).setValue(1);
+                                else if(Integer.parseInt(KK11.getText().toString())<Integer.parseInt(snapshot.child(nama1).child("Batas").child("BatasII").getValue().toString()))
+                                    event.child(id).child(nama1).setValue(2);
+                                else if(Integer.parseInt(KK11.getText().toString())<Integer.parseInt(snapshot.child(nama1).child("Batas").child("BatasIII").getValue().toString()))
+                                    event.child(id).child(nama1).setValue(3);
+                                else if(Integer.parseInt(KK11.getText().toString())<Integer.parseInt(snapshot.child(nama1).child("Batas").child("BatasIV").getValue().toString()))
+                                    event.child(id).child(nama1).setValue(4);
+                                else if(Integer.parseInt(KK11.getText().toString())>Integer.parseInt(snapshot.child(nama1).child("Batas").child("BatasV").getValue().toString()))
+                                    event.child(id).child(nama1).setValue(5);}
+
+                                else{
+                                    if(Integer.parseInt(KK11.getText().toString())<Integer.parseInt(snapshot.child(nama1).child("Batas").child("BatasI").getValue().toString()))
+                                        event.child(id).child(nama1).setValue(5);
+                                    else if(Integer.parseInt(KK11.getText().toString())<Integer.parseInt(snapshot.child(nama1).child("Batas").child("BatasII").getValue().toString()))
+                                        event.child(id).child(nama1).setValue(4);
+                                    else if(Integer.parseInt(KK11.getText().toString())<Integer.parseInt(snapshot.child(nama1).child("Batas").child("BatasIII").getValue().toString()))
+                                        event.child(id).child(nama1).setValue(3);
+                                    else if(Integer.parseInt(KK11.getText().toString())<Integer.parseInt(snapshot.child(nama1).child("Batas").child("BatasIV").getValue().toString()))
+                                        event.child(id).child(nama1).setValue(2);
+                                    else if(Integer.parseInt(KK11.getText().toString())>Integer.parseInt(snapshot.child(nama1).child("Batas").child("BatasV").getValue().toString()))
+                                        event.child(id).child(nama1).setValue(1);}
+
+
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+
+
+                        });
+
+
+
                 }
 
 
