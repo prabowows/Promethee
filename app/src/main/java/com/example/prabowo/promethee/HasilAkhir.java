@@ -1,15 +1,20 @@
 package com.example.prabowo.promethee;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.prabowo.promethee.ListKecamatanSet.SetKecamatanActivity;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polygon;
+import com.google.android.gms.maps.model.PolygonOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.firebase.database.DataSnapshot;
@@ -111,72 +116,86 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
         if(Koordinat.equals("Gondokusuman")){
         LatLng Gondokusuman = new LatLng(-7.786141, 110.380372);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Gondokusuman, 15));
-        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);}
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+            mMap.addMarker(new MarkerOptions().position(Gondokusuman).title(Koordinat));}
 
         if(Koordinat.equals("Danurejan")){
         LatLng Danurejan = new LatLng(-7.792714, 110.372069);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Danurejan , 15));
-        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);}
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+            mMap.addMarker(new MarkerOptions().position(Danurejan).title(Koordinat));}
 
         if(Koordinat.equals("Gedongtengen")){
         LatLng Gedongtengen = new LatLng(-7.791625, 110.361137);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Gedongtengen, 15));
-        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);}
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        mMap.addMarker(new MarkerOptions().position(Gedongtengen).title(Koordinat));}
 
         if(Koordinat.equals("Gondomanan")){
         LatLng Gondomanan = new LatLng(-7.801154, 110.367953);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Gondomanan, 15));
-        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);}
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+            mMap.addMarker(new MarkerOptions().position(Gondomanan).title(Koordinat));}
 
         if(Koordinat.equals("Jetis")){
         LatLng Jetis = new LatLng(-7.782069, 110.364994);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Jetis, 15));
-        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);}
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+            mMap.addMarker(new MarkerOptions().position(Jetis).title(Koordinat));}
 
         if(Koordinat.equals("Kotagede")){
         LatLng Kotagede = new LatLng(-7.816991, 110.398072);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Kotagede, 15));
-        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);}
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+            mMap.addMarker(new MarkerOptions().position(Kotagede).title(Koordinat));}
 
         if(Koordinat.equals("Kraton")){
         LatLng Kraton = new LatLng(-7.808602, 110.362656);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Kraton, 15));
-        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);}
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+            mMap.addMarker(new MarkerOptions().position(Kraton).title(Koordinat));}
 
         if(Koordinat.equals("Mantrijeron")){
         LatLng Mantrijeron = new LatLng(-7.818710, 110.359767);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Mantrijeron, 15));
-        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);}
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+            mMap.addMarker(new MarkerOptions().position(Mantrijeron).title(Koordinat));}
 
         if(Koordinat.equals("Mergangsan")){
         LatLng Mergangsan = new LatLng(-7.814062, 110.372862);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Mergangsan, 15));
-        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);}
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+            mMap.addMarker(new MarkerOptions().position(Mergangsan).title(Koordinat));}
 
         if(Koordinat.equals("Ngampilan")){
         LatLng Ngampilan = new LatLng(-7.798244, 110.358622);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Ngampilan, 15));
-        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);}
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+            mMap.addMarker(new MarkerOptions().position(Ngampilan).title(Koordinat));}
 
         if(Koordinat.equals("Pakualaman")){
         LatLng Pakualaman = new LatLng(-7.799547, 110.376136);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Pakualaman, 15));
-        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);}
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+            mMap.addMarker(new MarkerOptions().position(Pakualaman).title(Koordinat));}
 
         if(Koordinat.equals("Tegalrejo")){
         LatLng Tegalrejo = new LatLng(-7.781013, 110.354193);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Tegalrejo, 15));
-        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);}
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+            mMap.addMarker(new MarkerOptions().position(Tegalrejo).title(Koordinat));}
 
         if(Koordinat.equals("Umbulharjo")){
         LatLng Umbulharjo = new LatLng(-7.815936, 110.385549);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Umbulharjo, 15));
-        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);}
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+            mMap.addMarker(new MarkerOptions().position(Umbulharjo).title(Koordinat));}
 
         if(Koordinat.equals("Wirobrajan")){
         LatLng Wirobrajan = new LatLng(-7.802934, 110.350569);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Wirobrajan, 15));
-        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);}
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+            mMap.addMarker(new MarkerOptions().position(Wirobrajan).title(Koordinat));}
         //mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney),18);
 
 
@@ -207,8 +226,12 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                         }
 
 
-                        Polyline line = mMap.addPolyline(new PolylineOptions().width(5).color(Color.RED));
-                        line.setPoints(mListLatLngGondokusuman);
+                        Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngGondokusuman).strokeColor(Color.RED));
+                        //line.setPoints(mListLatLngGondokusuman);
+                        //line.setFillColor(0x7F0000FF)//blue
+                        //line.setFillColor(0x7F00FF00)//green;
+                        line.setFillColor(0x7FFF0000);
+
 
                     }
 
@@ -239,8 +262,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                         }
 
 
-                        Polyline line = mMap.addPolyline(new PolylineOptions().width(4).color(Color.BLUE));
-                        line.setPoints(mListLatLngGondokusuman2);
+                        Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngGondokusuman2).strokeColor(Color.BLUE));
+                        line.setFillColor(0x7F0000FF);
 
 
                     }
@@ -271,8 +294,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(4).color(Color.BLACK));
-                            line.setPoints(mListLatLngGondokusuman3);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngGondokusuman3).strokeColor(Color.GREEN));
+                            line.setFillColor(0x7F00FF00);
 
 
                         }
@@ -322,8 +345,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(5).color(Color.RED));
-                            line.setPoints(mListLatLngDanurejan);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngDanurejan).strokeColor(Color.RED));
+                            line.setFillColor(0x7FFF0000);
 
                         }
 
@@ -354,8 +377,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(4).color(Color.BLUE));
-                            line.setPoints(mListLatLngDanurejan2);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngDanurejan2).strokeColor(Color.BLUE));
+                            line.setFillColor(0x7F0000FF);
 
 
                         }
@@ -388,9 +411,9 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                             }
 
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngDanurejan3).strokeColor(Color.GREEN));
+                            line.setFillColor(0x7F00FF00);
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(4).color(Color.BLACK));
-                            line.setPoints(mListLatLngDanurejan3);
 
 
                         }
@@ -442,8 +465,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(5).color(Color.RED));
-                            line.setPoints(mListLatLngWirobrajan);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngWirobrajan).strokeColor(Color.RED));
+                            line.setFillColor(0x7FFF0000);
 
                         }
 
@@ -474,8 +497,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(4).color(Color.BLUE));
-                            line.setPoints(mListLatLngWirobrajan2);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngWirobrajan2).strokeColor(Color.BLUE));
+                            line.setFillColor(0x7F0000FF);
 
 
                         }
@@ -506,8 +529,9 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(4).color(Color.BLACK));
-                            line.setPoints(mListLatLngWirobrajan3);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngWirobrajan3).strokeColor(Color.GREEN));
+                            line.setFillColor(0x7F00FF00);
+
 
 
                         }
@@ -558,8 +582,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(5).color(Color.RED));
-                            line.setPoints(mListLatLngGedongtengen);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngGedongtengen).strokeColor(Color.RED));
+                            line.setFillColor(0x7FFF0000);
 
                         }
 
@@ -590,8 +614,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(4).color(Color.BLUE));
-                            line.setPoints(mListLatLngGedongtengen2);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngGedongtengen2).strokeColor(Color.BLUE));
+                            line.setFillColor(0x7F0000FF);
 
 
                         }
@@ -621,9 +645,9 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                             }
 
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngGedongtengen3).strokeColor(Color.GREEN));
+                            line.setFillColor(0x7F00FF00);
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(4).color(Color.BLACK));
-                            line.setPoints(mListLatLngGedongtengen3);
 
 
                         }
@@ -674,8 +698,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(5).color(Color.RED));
-                            line.setPoints(mListLatLngGondomanan);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngGondomanan).strokeColor(Color.RED));
+                            line.setFillColor(0x7FFF0000);
 
                         }
 
@@ -706,8 +730,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(4).color(Color.BLUE));
-                            line.setPoints(mListLatLngGondomanan2);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngGondomanan2).strokeColor(Color.BLUE));
+                            line.setFillColor(0x7F0000FF);
 
 
                         }
@@ -738,8 +762,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(4).color(Color.BLACK));
-                            line.setPoints(mListLatLngGondomanan3);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngGondomanan3).strokeColor(Color.GREEN));
+                            line.setFillColor(0x7F00FF00);
 
 
                         }
@@ -790,8 +814,9 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(5).color(Color.RED));
-                            line.setPoints(mListLatLngJetis);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngJetis).strokeColor(Color.RED));
+                            line.setFillColor(0x7FFF0000);
+
 
                         }
 
@@ -822,8 +847,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(4).color(Color.BLUE));
-                            line.setPoints(mListLatLngJetis2);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngJetis2).strokeColor(Color.BLUE));
+                            line.setFillColor(0x7F0000FF);
 
 
                         }
@@ -854,8 +879,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(4).color(Color.BLACK));
-                            line.setPoints(mListLatLngJetis3);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngJetis3).strokeColor(Color.GREEN));
+                            line.setFillColor(0x7F00FF00);
 
 
                         }
@@ -905,8 +930,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(5).color(Color.RED));
-                            line.setPoints(mListLatLngKotagede);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngKotagede).strokeColor(Color.RED));
+                            line.setFillColor(0x7FFF0000);
 
                         }
 
@@ -937,8 +962,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(4).color(Color.BLUE));
-                            line.setPoints(mListLatLngKotagede2);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngKotagede2).strokeColor(Color.BLUE));
+                            line.setFillColor(0x7F0000FF);
 
 
                         }
@@ -969,8 +994,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(4).color(Color.BLACK));
-                            line.setPoints(mListLatLngKotagede3);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngKotagede3).strokeColor(Color.GREEN));
+                            line.setFillColor(0x7F00FF00);
 
 
                         }
@@ -1020,8 +1045,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(5).color(Color.RED));
-                            line.setPoints(mListLatLngKraton);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngKraton).strokeColor(Color.RED));
+                            line.setFillColor(0x7FFF0000);
 
                         }
 
@@ -1052,8 +1077,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(4).color(Color.BLUE));
-                            line.setPoints(mListLatLngKraton2);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngKraton2).strokeColor(Color.BLUE));
+                            line.setFillColor(0x7F0000FF);
 
 
                         }
@@ -1084,8 +1109,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(4).color(Color.BLACK));
-                            line.setPoints(mListLatLngKraton3);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngKraton3).strokeColor(Color.GREEN));
+                            line.setFillColor(0x7F00FF00);
 
 
                         }
@@ -1136,8 +1161,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(5).color(Color.RED));
-                            line.setPoints(mListLatLngMantrijeron);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngMantrijeron).strokeColor(Color.RED));
+                            line.setFillColor(0x7FFF0000);
 
                         }
 
@@ -1168,8 +1193,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(4).color(Color.BLUE));
-                            line.setPoints(mListLatLngMantrijeron2);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngMantrijeron2).strokeColor(Color.BLUE));
+                            line.setFillColor(0x7F0000FF);
 
 
                         }
@@ -1200,8 +1225,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(4).color(Color.BLACK));
-                            line.setPoints(mListLatLngMantrijeron3);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngMantrijeron3).strokeColor(Color.GREEN));
+                            line.setFillColor(0x7F00FF00);
 
 
                         }
@@ -1252,8 +1277,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(5).color(Color.RED));
-                            line.setPoints(mListLatLngMergangsan);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngMergangsan).strokeColor(Color.RED));
+                            line.setFillColor(0x7FFF0000);
 
                         }
 
@@ -1284,8 +1309,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(4).color(Color.BLUE));
-                            line.setPoints(mListLatLngMergangsan2);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngMergangsan2).strokeColor(Color.BLUE));
+                            line.setFillColor(0x7F0000FF);
 
 
                         }
@@ -1316,8 +1341,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(4).color(Color.BLACK));
-                            line.setPoints(mListLatLngMergangsan3);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngMergangsan3).strokeColor(Color.GREEN));
+                            line.setFillColor(0x7F00FF00);
 
 
                         }
@@ -1368,8 +1393,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(5).color(Color.RED));
-                            line.setPoints(mListLatLngNgampilan);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngNgampilan).strokeColor(Color.RED));
+                            line.setFillColor(0x7FFF0000);
 
                         }
 
@@ -1400,8 +1425,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(4).color(Color.BLUE));
-                            line.setPoints(mListLatLngNgampilan2);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngNgampilan2).strokeColor(Color.BLUE));
+                            line.setFillColor(0x7F0000FF);
 
 
                         }
@@ -1418,7 +1443,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                 if (Integer.parseInt(rank) <= 14 && Integer.parseInt(rank) > 9) {
 
-                    DatabaseReference refxx = mRootref.child("Peta").child("Mergangsan").child("geometries").child("0").child("coordinates").child("0").child("0");
+                    DatabaseReference refxx = mRootref.child("Peta").child("Ngampilan").child("geometries").child("0").child("coordinates").child("0").child("0");
 
                     refxx.addValueEventListener(new ValueEventListener() {
 
@@ -1431,9 +1456,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                             }
 
-
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(4).color(Color.BLACK));
-                            line.setPoints(mListLatLngNgampilan3);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngNgampilan3).strokeColor(Color.GREEN));
+                            line.setFillColor(0x7F00FF00);
 
 
                         }
@@ -1484,8 +1508,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(5).color(Color.RED));
-                            line.setPoints(mListLatLngPakualaman);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngPakualaman).strokeColor(Color.RED));
+                            line.setFillColor(0x7FFF0000);
 
                         }
 
@@ -1516,8 +1540,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(4).color(Color.BLUE));
-                            line.setPoints(mListLatLngPakualaman2);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngPakualaman2).strokeColor(Color.BLUE));
+                            line.setFillColor(0x7F0000FF);
 
 
                         }
@@ -1548,8 +1572,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(4).color(Color.BLACK));
-                            line.setPoints(mListLatLngPakualaman3);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngPakualaman3).strokeColor(Color.GREEN));
+                            line.setFillColor(0x7F00FF00);
 
 
                         }
@@ -1599,8 +1623,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(5).color(Color.RED));
-                            line.setPoints(mListLatLngTegalrejo);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngTegalrejo).strokeColor(Color.RED));
+                            line.setFillColor(0x7FFF0000);
 
                         }
 
@@ -1631,8 +1655,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(4).color(Color.BLUE));
-                            line.setPoints(mListLatLngTegalrejo2);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngTegalrejo2).strokeColor(Color.BLUE));
+                            line.setFillColor(0x7F0000FF);
 
 
                         }
@@ -1663,8 +1687,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(4).color(Color.BLACK));
-                            line.setPoints(mListLatLngTegalrejo3);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngTegalrejo3).strokeColor(Color.GREEN));
+                            line.setFillColor(0x7F00FF00);
 
 
                         }
@@ -1715,8 +1739,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(5).color(Color.RED));
-                            line.setPoints(mListLatLngUmbulharjo);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngUmbulharjo).strokeColor(Color.RED));
+                            line.setFillColor(0x7FFF0000);
 
                         }
 
@@ -1747,8 +1771,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(4).color(Color.BLUE));
-                            line.setPoints(mListLatLngUmbulharjo2);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngUmbulharjo2).strokeColor(Color.BLUE));
+                            line.setFillColor(0x7F0000FF);
 
 
                         }
@@ -1779,8 +1803,8 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                             }
 
 
-                            Polyline line = mMap.addPolyline(new PolylineOptions().width(4).color(Color.BLACK));
-                            line.setPoints(mListLatLngUmbulharjo3);
+                            Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngUmbulharjo3).strokeColor(Color.GREEN));
+                            line.setFillColor(0x7F00FF00);
 
 
                         }
@@ -1806,6 +1830,11 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
         });
 
 
+    }
+
+    public void onBackPressed() {
+        finish();
+        startActivity(new Intent(HasilAkhir.this, MainActivity.class));
     }
 
 

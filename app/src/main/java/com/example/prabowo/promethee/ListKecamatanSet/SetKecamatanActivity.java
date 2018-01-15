@@ -13,7 +13,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.example.prabowo.promethee.ListviewHasilActivity;
+import com.example.prabowo.promethee.MainActivity;
 import com.example.prabowo.promethee.PreferensiActivity;
+import com.example.prabowo.promethee.PrometheeRankingActivity;
 import com.example.prabowo.promethee.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -136,4 +139,10 @@ public class SetKecamatanActivity extends AppCompatActivity implements View.OnCl
     }
 
 
+
+
+    public void onBackPressed() {
+        finish();
+            startActivity(new Intent(SetKecamatanActivity.this, MainActivity.class));
+    }
 }

@@ -214,8 +214,8 @@ public class ListviewHasilActivity extends AppCompatActivity {
                     arrLeaving[i] = 0;
                     arrEntering[i] = 0;
                     for (int j = 0; j < 14; j++) {
-                        arrLeaving[i] = arrLeaving[i] + IndeksPreferensi[j][i];
-                        arrEntering[i] = arrEntering[i] + IndeksPreferensi[i][j];
+                        arrLeaving[i] = arrLeaving[i] + IndeksPreferensi[i][j];
+                        arrEntering[i] = arrEntering[i] + IndeksPreferensi[j][i];
                     }
                     arrLeaving[i] = (1 / 13.0d) * arrLeaving[i];
                     arrEntering[i] = (1 / 13.0d) * arrEntering[i];

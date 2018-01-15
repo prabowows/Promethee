@@ -31,8 +31,9 @@
                 android:layout_marginRight="10dp"
                 android:gravity="center"
 
+                android:paddingBottom="10dp"
                 android:text="Harga :"
-                android:textSize="18dp"
+                android:textSize="15dp"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -62,8 +63,9 @@
                             <TextView
                                 android:id="@+id/KK11"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:layout_height="65dp"
                                 android:layout_gravity="center"
+                                android:textSize="10dp"
                                 android:layout_marginRight="10dp"
                                 android:layout_weight="1"
                                 android:gravity="left|center"
@@ -71,9 +73,10 @@
                                 android:visibility="gone" />
 
                             <TextView
+                                android:textSize="10dp"
                                 android:id="@+id/KK12"
                                 android:layout_width="match_parent"
-                                android:layout_height="50dp"
+                                android:layout_height="65dp"
                                 android:layout_gravity="center"
                                 android:layout_weight="4"
                                 android:gravity="left|center"
@@ -92,9 +95,10 @@
                             android:orientation="horizontal">
 
                             <TextView
+                                android:textSize="10dp"
                                 android:id="@+id/KK31"
                                 android:layout_width="match_parent"
-                                android:layout_height="50dp"
+                                android:layout_height="65dp"
                                 android:layout_gravity="center"
                                 android:layout_marginRight="10dp"
                                 android:layout_weight="1"
@@ -103,9 +107,10 @@
                                 android:visibility="gone" />
 
                             <TextView
+                                android:textSize="10dp"
                                 android:id="@+id/KK32"
                                 android:layout_width="match_parent"
-                                android:layout_height="50dp"
+                                android:layout_height="65dp"
                                 android:layout_gravity="center"
                                 android:layout_weight="4"
                                 android:gravity="left|center"
@@ -124,9 +129,10 @@
                             android:orientation="horizontal">
 
                             <TextView
+                                android:textSize="10dp"
                                 android:id="@+id/KK51"
                                 android:layout_width="match_parent"
-                                android:layout_height="50dp"
+                                android:layout_height="65dp"
                                 android:layout_gravity="center"
                                 android:layout_marginRight="10dp"
                                 android:layout_weight="1"
@@ -135,9 +141,10 @@
                                 android:visibility="gone" />
 
                             <TextView
+                                android:textSize="10dp"
                                 android:id="@+id/KK52"
                                 android:layout_width="match_parent"
-                                android:layout_height="50dp"
+                                android:layout_height="65dp"
                                 android:layout_gravity="center"
                                 android:layout_weight="4"
                                 android:gravity="left|center"
@@ -156,9 +163,10 @@
                             android:orientation="horizontal">
 
                             <TextView
+                                android:textSize="10dp"
                                 android:id="@+id/KK71"
                                 android:layout_width="match_parent"
-                                android:layout_height="50dp"
+                                android:layout_height="65dp"
                                 android:layout_gravity="center"
                                 android:layout_marginRight="10dp"
                                 android:layout_weight="1"
@@ -167,9 +175,10 @@
                                 android:visibility="gone" />
 
                             <TextView
+                                android:textSize="10dp"
                                 android:id="@+id/KK72"
                                 android:layout_width="match_parent"
-                                android:layout_height="50dp"
+                                android:layout_height="65dp"
                                 android:layout_gravity="center"
                                 android:layout_weight="4"
                                 android:gravity="left|center"
@@ -189,9 +198,10 @@
                             android:orientation="horizontal">
 
                             <TextView
+                                android:textSize="10dp"
                                 android:id="@+id/KK91"
                                 android:layout_width="match_parent"
-                                android:layout_height="50dp"
+                                android:layout_height="65dp"
                                 android:layout_gravity="center"
                                 android:layout_marginRight="10dp"
                                 android:layout_weight="1"
@@ -200,9 +210,10 @@
                                 android:visibility="gone" />
 
                             <TextView
+                                android:textSize="10dp"
                                 android:id="@+id/KK92"
                                 android:layout_width="match_parent"
-                                android:layout_height="50dp"
+                                android:layout_height="65dp"
                                 android:layout_gravity="center"
                                 android:layout_weight="4"
                                 android:gravity="left|center"
@@ -231,9 +242,10 @@
                             android:orientation="horizontal">
 
                             <TextView
+                                android:textSize="10dp"
                                 android:id="@+id/KK21"
                                 android:layout_width="match_parent"
-                                android:layout_height="50dp"
+                                android:layout_height="65dp"
                                 android:layout_gravity="center"
                                 android:layout_marginRight="10dp"
                                 android:layout_weight="1"
@@ -242,9 +254,10 @@
                                 android:visibility="gone" />
 
                             <TextView
+                                android:textSize="10dp"
                                 android:id="@+id/KK22"
                                 android:layout_width="match_parent"
-                                android:layout_height="50dp"
+                                android:layout_height="65dp"
                                 android:layout_gravity="center"
                                 android:layout_weight="4"
                                 android:gravity="left|center"
@@ -264,9 +277,10 @@
                             android:orientation="horizontal">
 
                             <TextView
+                                android:textSize="10dp"
                                 android:id="@+id/KK41"
                                 android:layout_width="match_parent"
-                                android:layout_height="50dp"
+                                android:layout_height="65dp"
                                 android:layout_gravity="center"
                                 android:layout_marginRight="10dp"
                                 android:layout_weight="1"
@@ -275,9 +289,10 @@
                                 android:visibility="gone" />
 
                             <TextView
+                                android:textSize="10dp"
                                 android:id="@+id/KK42"
                                 android:layout_width="match_parent"
-                                android:layout_height="50dp"
+                                android:layout_height="65dp"
                                 android:layout_gravity="center"
                                 android:layout_weight="4"
                                 android:gravity="left|center"
@@ -296,9 +311,10 @@
                             android:orientation="horizontal">
 
                             <TextView
+                                android:textSize="10dp"
                                 android:id="@+id/KK61"
                                 android:layout_width="match_parent"
-                                android:layout_height="50dp"
+                                android:layout_height="65dp"
                                 android:layout_gravity="center"
                                 android:layout_marginRight="10dp"
                                 android:layout_weight="1"
@@ -307,9 +323,10 @@
                                 android:visibility="gone" />
 
                             <TextView
+                                android:textSize="10dp"
                                 android:id="@+id/KK62"
                                 android:layout_width="match_parent"
-                                android:layout_height="50dp"
+                                android:layout_height="65dp"
                                 android:layout_gravity="center"
                                 android:layout_weight="4"
                                 android:gravity="left|center"
@@ -329,9 +346,10 @@
                             android:orientation="horizontal">
 
                             <TextView
+                                android:textSize="10dp"
                                 android:id="@+id/KK81"
                                 android:layout_width="match_parent"
-                                android:layout_height="50dp"
+                                android:layout_height="65dp"
                                 android:layout_gravity="center"
                                 android:layout_marginRight="10dp"
                                 android:layout_weight="1"
@@ -340,9 +358,10 @@
                                 android:visibility="gone" />
 
                             <TextView
+                                android:textSize="10dp"
                                 android:id="@+id/KK82"
                                 android:layout_width="match_parent"
-                                android:layout_height="50dp"
+                                android:layout_height="65dp"
                                 android:layout_gravity="center"
                                 android:layout_weight="4"
                                 android:gravity="left|center"
@@ -361,9 +380,10 @@
                             android:orientation="horizontal">
 
                             <TextView
+                                android:textSize="10dp"
                                 android:id="@+id/KKT1"
                                 android:layout_width="match_parent"
-                                android:layout_height="50dp"
+                                android:layout_height="65dp"
                                 android:layout_gravity="center"
                                 android:layout_marginRight="10dp"
                                 android:layout_weight="1"
@@ -372,9 +392,10 @@
                                 android:visibility="gone" />
 
                             <TextView
+                                android:textSize="10dp"
                                 android:id="@+id/KKT2"
                                 android:layout_width="match_parent"
-                                android:layout_height="50dp"
+                                android:layout_height="65dp"
                                 android:layout_gravity="center"
                                 android:layout_weight="4"
                                 android:gravity="left|center"

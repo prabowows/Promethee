@@ -48,8 +48,8 @@ public class PrometheeRankingActivity extends AppCompatActivity {
             arrLeaving[i] = 0;
             arrEntering[i] = 0;
             for (int j = 0; j < 14; j++) {
-                arrLeaving[i] = arrLeaving[i] + MultiKriteriaActivity.IndeksPreferensi[j][i];
-                arrEntering[i] = arrEntering[i] + MultiKriteriaActivity.IndeksPreferensi[i][j];
+                arrLeaving[i] = arrLeaving[i] + MultiKriteriaActivity.IndeksPreferensi[i][j];
+                arrEntering[i] = arrEntering[i] + MultiKriteriaActivity.IndeksPreferensi[j][i];
             }
             arrLeaving[i] = (1 / 13.0d) * arrLeaving[i];
             arrEntering[i] = (1 / 13.0d) * arrEntering[i];
