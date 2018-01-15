@@ -1,12 +1,16 @@
 package com.example.prabowo.promethee;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -22,10 +26,10 @@ public class MainActivity extends AppCompatActivity {
     DatabaseReference mRootref;
     TableRow row;
     TableLayout tableLayout;
-    Button Hapus, Tambah ;
-    ImageButton TambahShow, HapusShow, Selesai, BThasil;
-    EditText editHapus, editTambah1, editTambah2, editTambah3, editBatas1, editBatas2;
-
+    Button Hapus;
+    ImageButton Tambah, TambahShow, HapusShow, Selesai, BThasil;
+    EditText editHapus, editTambah1, editTambah2, editTambah3, editBatas1, editBatas2,editGolongan1,editGolongan2,editGolongan3,editGolongan4;
+    RadioButton CBmax,CBmin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +48,13 @@ public class MainActivity extends AppCompatActivity {
         editTambah3 = findViewById(R.id.editTambah3);
         editBatas1 = findViewById(R.id.editBatas1);
         editBatas2 = findViewById(R.id.editBatas2);
+        editGolongan1=findViewById(R.id.editGolongan1);
+        editGolongan2=findViewById(R.id.editGolongan2);
+        editGolongan3=findViewById(R.id.editGolongan3);
+        editGolongan4=findViewById(R.id.editGolongan4);
+        CBmax = findViewById(R.id.CBmax);
+        CBmin = findViewById(R.id.CBmin);
+
 
         HapusShow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,10 +112,12 @@ public class MainActivity extends AppCompatActivity {
         TambahShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                CBmax.setVisibility(view.VISIBLE);
+                CBmin.setVisibility(view.VISIBLE);
+                HapusShow.setVisibility(view.GONE);
                 tableLayout.setVisibility(view.GONE);
                 editHapus.setVisibility(view.GONE);
                 TambahShow.setVisibility(View.GONE);
-                HapusShow.setVisibility(View.VISIBLE);
                 Tambah.setVisibility(View.VISIBLE);
                 Hapus.setVisibility(View.GONE);
                 editTambah1.setVisibility(view.VISIBLE);
@@ -112,6 +125,10 @@ public class MainActivity extends AppCompatActivity {
                 editTambah3.setVisibility(view.VISIBLE);
                 editBatas1.setVisibility(View.VISIBLE);
                 editBatas2.setVisibility(View.VISIBLE);
+                editGolongan1.setVisibility(View.VISIBLE);
+                editGolongan2.setVisibility(View.VISIBLE);
+                editGolongan3.setVisibility(View.VISIBLE);
+                editGolongan4.setVisibility(View.VISIBLE);
             }
         });
         Hapus.setOnClickListener(new View.OnClickListener() {
@@ -125,9 +142,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
+
     @Override
     public void onStart() {
         super.onStart();
+
+
+
         mRootref = FirebaseDatabase.getInstance().getReference();
         DatabaseReference event = mRootref.child("Kriteria");
         event.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -210,6 +233,18 @@ public class MainActivity extends AppCompatActivity {
         mRootref.child("Kriteria").child(kriteria).child("Preferensi" + kriteria).setValue(preferensi);
         mRootref.child("Kriteria").child(kriteria).child("Batas1").setValue(batas1);
         mRootref.child("Kriteria").child(kriteria).child("Batas2").setValue(batas2);
+        mRootref.child("Kriteria").child(kriteria).child("Batas").child("BatasI").setValue(editGolongan1.getText().toString());
+        mRootref.child("Kriteria").child(kriteria).child("Batas").child("BatasII").setValue(editGolongan2.getText().toString());
+        mRootref.child("Kriteria").child(kriteria).child("Batas").child("BatasIII").setValue(editGolongan3.getText().toString());
+        mRootref.child("Kriteria").child(kriteria).child("Batas").child("BatasIV").setValue(editGolongan4.getText().toString());
+        if(CBmax.isChecked()){
+            mRootref.child("Kriteria").child(kriteria).child("Kaidah").setValue("max");
+        }
+        if(CBmin.isChecked()){
+            mRootref.child("Kriteria").child(kriteria).child("Kaidah").setValue("min");
+        }
+
+
         DatabaseReference event = mRootref.child("Kecamatan");
         event.addListenerForSingleValueEvent(new ValueEventListener() {
 
@@ -261,4 +296,20 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setMessage("Apa anda ingin keluar ?")
+                .setCancelable(false)
+                .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) { finish(); System.exit(0);
+                    }
+                })
+                .setNegativeButton("Tidak", null)
+                .show();
+    }
+
 }
+
+

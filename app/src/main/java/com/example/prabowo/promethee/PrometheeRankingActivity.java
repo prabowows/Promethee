@@ -38,7 +38,9 @@ public class PrometheeRankingActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
-                startActivity(new Intent(PrometheeRankingActivity.this, ListviewHasilActivity.class));
+                Intent intent = new Intent(PrometheeRankingActivity.this, ListviewHasilActivity.class);
+                intent.putExtra("kode", "pindah");
+                startActivity(intent);
             }
         });
 
@@ -86,5 +88,9 @@ public class PrometheeRankingActivity extends AppCompatActivity {
         else ((TextView) row.findViewById(R.id.Keterangan)).setText("Aman");
 
         tableLayoutA.addView(row);
+    }
+    public void onBackPressed() {
+        finish();
+        startActivity(new Intent(PrometheeRankingActivity.this, PreferensiActivity.class));
     }
 }

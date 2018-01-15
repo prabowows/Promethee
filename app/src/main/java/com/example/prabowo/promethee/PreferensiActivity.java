@@ -1,8 +1,10 @@
 package com.example.prabowo.promethee;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
@@ -10,6 +12,7 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import com.example.prabowo.promethee.ListKecamatanSet.EditKecamatanActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -33,6 +36,11 @@ public class PreferensiActivity extends AppCompatActivity {
     static double[][] batasPref = new double[7][10];
     private ProgressDialog progressDialog;
     ImageView CheckNextIndeks;
+
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -376,6 +384,15 @@ public class PreferensiActivity extends AppCompatActivity {
         }
     }
 
+    public void onBackPressed() {
+        finish();
+        startActivity(new Intent(PreferensiActivity.this, EditKecamatanActivity.class));
+    }
 }
+
+
+
+
+
 
 

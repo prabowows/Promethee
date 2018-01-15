@@ -156,7 +156,7 @@ public class EditKecamatanActivity extends AppCompatActivity {
                                         event.child(id).child(nama10).setValue(3);
                                     else if(Integer.parseInt(KKT1.getText().toString())<Integer.parseInt(snapshot.child(nama10).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama10).setValue(4);
-                                    else if(Integer.parseInt(KKT1.getText().toString())>Integer.parseInt(snapshot.child(nama10).child("Batas").child("BatasV").getValue().toString()))
+                                    else if(Integer.parseInt(KKT1.getText().toString())>Integer.parseInt(snapshot.child(nama10).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama10).setValue(5);}
 
                                 else{
@@ -168,7 +168,7 @@ public class EditKecamatanActivity extends AppCompatActivity {
                                         event.child(id).child(nama10).setValue(3);
                                     else if(Integer.parseInt(KKT1.getText().toString())<Integer.parseInt(snapshot.child(nama10).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama10).setValue(2);
-                                    else if(Integer.parseInt(KKT1.getText().toString())>Integer.parseInt(snapshot.child(nama10).child("Batas").child("BatasV").getValue().toString()))
+                                    else if(Integer.parseInt(KKT1.getText().toString())>Integer.parseInt(snapshot.child(nama10).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama10).setValue(1);}
 
 
@@ -201,7 +201,7 @@ public class EditKecamatanActivity extends AppCompatActivity {
                                         event.child(id).child(nama9).setValue(3);
                                     else if(Integer.parseInt(KK91.getText().toString())<Integer.parseInt(snapshot.child(nama9).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama9).setValue(4);
-                                    else if(Integer.parseInt(KK91.getText().toString())>Integer.parseInt(snapshot.child(nama9).child("Batas").child("BatasV").getValue().toString()))
+                                    else if(Integer.parseInt(KK91.getText().toString())>Integer.parseInt(snapshot.child(nama9).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama9).setValue(5);}
 
                                 else{
@@ -213,7 +213,7 @@ public class EditKecamatanActivity extends AppCompatActivity {
                                         event.child(id).child(nama9).setValue(3);
                                     else if(Integer.parseInt(KK91.getText().toString())<Integer.parseInt(snapshot.child(nama9).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama9).setValue(2);
-                                    else if(Integer.parseInt(KK91.getText().toString())>Integer.parseInt(snapshot.child(nama9).child("Batas").child("BatasV").getValue().toString()))
+                                    else if(Integer.parseInt(KK91.getText().toString())>Integer.parseInt(snapshot.child(nama9).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama9).setValue(1);}
 
 
@@ -245,7 +245,7 @@ public class EditKecamatanActivity extends AppCompatActivity {
                                         event.child(id).child(nama8).setValue(3);
                                     else if(Integer.parseInt(KK81.getText().toString())<Integer.parseInt(snapshot.child(nama8).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama8).setValue(4);
-                                    else if(Integer.parseInt(KK81.getText().toString())>Integer.parseInt(snapshot.child(nama8).child("Batas").child("BatasV").getValue().toString()))
+                                    else if(Integer.parseInt(KK81.getText().toString())>Integer.parseInt(snapshot.child(nama8).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama8).setValue(5);}
 
                                 else{
@@ -257,7 +257,7 @@ public class EditKecamatanActivity extends AppCompatActivity {
                                         event.child(id).child(nama8).setValue(3);
                                     else if(Integer.parseInt(KK81.getText().toString())<Integer.parseInt(snapshot.child(nama8).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama8).setValue(2);
-                                    else if(Integer.parseInt(KK81.getText().toString())>Integer.parseInt(snapshot.child(nama8).child("Batas").child("BatasV").getValue().toString()))
+                                    else if(Integer.parseInt(KK81.getText().toString())>Integer.parseInt(snapshot.child(nama8).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama8).setValue(1);}
 
 
@@ -290,7 +290,7 @@ public class EditKecamatanActivity extends AppCompatActivity {
                                         event.child(id).child(nama7).setValue(3);
                                     else if(Integer.parseInt(KK71.getText().toString())<Integer.parseInt(snapshot.child(nama7).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama7).setValue(4);
-                                    else if(Integer.parseInt(KK71.getText().toString())>Integer.parseInt(snapshot.child(nama7).child("Batas").child("BatasV").getValue().toString()))
+                                    else if(Integer.parseInt(KK71.getText().toString())>Integer.parseInt(snapshot.child(nama7).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama7).setValue(5);}
 
                                 else{
@@ -302,7 +302,7 @@ public class EditKecamatanActivity extends AppCompatActivity {
                                         event.child(id).child(nama7).setValue(3);
                                     else if(Integer.parseInt(KK71.getText().toString())<Integer.parseInt(snapshot.child(nama7).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama7).setValue(2);
-                                    else if(Integer.parseInt(KK71.getText().toString())>Integer.parseInt(snapshot.child(nama7).child("Batas").child("BatasV").getValue().toString()))
+                                    else if(Integer.parseInt(KK71.getText().toString())>Integer.parseInt(snapshot.child(nama7).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama7).setValue(1);}
 
 
@@ -335,7 +335,7 @@ public class EditKecamatanActivity extends AppCompatActivity {
                                         event.child(id).child(nama6).setValue(3);
                                     else if(Integer.parseInt(KK61.getText().toString())<Integer.parseInt(snapshot.child(nama6).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama6).setValue(4);
-                                    else if(Integer.parseInt(KK61.getText().toString())>Integer.parseInt(snapshot.child(nama6).child("Batas").child("BatasV").getValue().toString()))
+                                    else if(Integer.parseInt(KK61.getText().toString())>Integer.parseInt(snapshot.child(nama6).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama6).setValue(5);}
 
                                 else{
@@ -347,7 +347,7 @@ public class EditKecamatanActivity extends AppCompatActivity {
                                         event.child(id).child(nama6).setValue(3);
                                     else if(Integer.parseInt(KK61.getText().toString())<Integer.parseInt(snapshot.child(nama6).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama6).setValue(2);
-                                    else if(Integer.parseInt(KK61.getText().toString())>Integer.parseInt(snapshot.child(nama6).child("Batas").child("BatasV").getValue().toString()))
+                                    else if(Integer.parseInt(KK61.getText().toString())>Integer.parseInt(snapshot.child(nama6).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama6).setValue(1);}
 
 
@@ -378,7 +378,7 @@ public class EditKecamatanActivity extends AppCompatActivity {
                                         event.child(id).child(nama5).setValue(3);
                                     else if(Integer.parseInt(KK51.getText().toString())<Integer.parseInt(snapshot.child(nama5).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama5).setValue(4);
-                                    else if(Integer.parseInt(KK51.getText().toString())>Integer.parseInt(snapshot.child(nama5).child("Batas").child("BatasV").getValue().toString()))
+                                    else if(Integer.parseInt(KK51.getText().toString())>Integer.parseInt(snapshot.child(nama5).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama5).setValue(5);}
 
                                 else{
@@ -390,7 +390,7 @@ public class EditKecamatanActivity extends AppCompatActivity {
                                         event.child(id).child(nama5).setValue(3);
                                     else if(Integer.parseInt(KK51.getText().toString())<Integer.parseInt(snapshot.child(nama5).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama5).setValue(2);
-                                    else if(Integer.parseInt(KK51.getText().toString())>Integer.parseInt(snapshot.child(nama5).child("Batas").child("BatasV").getValue().toString()))
+                                    else if(Integer.parseInt(KK51.getText().toString())>Integer.parseInt(snapshot.child(nama5).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama5).setValue(1);}
 
 
@@ -423,7 +423,7 @@ public class EditKecamatanActivity extends AppCompatActivity {
                                         event.child(id).child(nama4).setValue(3);
                                     else if(Integer.parseInt(KK41.getText().toString())<Integer.parseInt(snapshot.child(nama4).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama4).setValue(4);
-                                    else if(Integer.parseInt(KK41.getText().toString())>Integer.parseInt(snapshot.child(nama4).child("Batas").child("BatasV").getValue().toString()))
+                                    else if(Integer.parseInt(KK41.getText().toString())>Integer.parseInt(snapshot.child(nama4).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama4).setValue(5);}
 
                                 else{
@@ -435,7 +435,7 @@ public class EditKecamatanActivity extends AppCompatActivity {
                                         event.child(id).child(nama4).setValue(3);
                                     else if(Integer.parseInt(KK41.getText().toString())<Integer.parseInt(snapshot.child(nama4).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama4).setValue(2);
-                                    else if(Integer.parseInt(KK41.getText().toString())>Integer.parseInt(snapshot.child(nama4).child("Batas").child("BatasV").getValue().toString()))
+                                    else if(Integer.parseInt(KK41.getText().toString())>Integer.parseInt(snapshot.child(nama4).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama4).setValue(1);}
 
 
@@ -467,7 +467,7 @@ public class EditKecamatanActivity extends AppCompatActivity {
                                         event.child(id).child(nama3).setValue(3);
                                     else if(Integer.parseInt(KK31.getText().toString())<Integer.parseInt(snapshot.child(nama3).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama3).setValue(4);
-                                    else if(Integer.parseInt(KK31.getText().toString())>Integer.parseInt(snapshot.child(nama3).child("Batas").child("BatasV").getValue().toString()))
+                                    else if(Integer.parseInt(KK31.getText().toString())>Integer.parseInt(snapshot.child(nama3).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama3).setValue(5);}
 
                                 else{
@@ -479,7 +479,7 @@ public class EditKecamatanActivity extends AppCompatActivity {
                                         event.child(id).child(nama3).setValue(3);
                                     else if(Integer.parseInt(KK31.getText().toString())<Integer.parseInt(snapshot.child(nama3).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama3).setValue(2);
-                                    else if(Integer.parseInt(KK31.getText().toString())>Integer.parseInt(snapshot.child(nama3).child("Batas").child("BatasV").getValue().toString()))
+                                    else if(Integer.parseInt(KK31.getText().toString())>Integer.parseInt(snapshot.child(nama3).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama3).setValue(1);}
 
 
@@ -522,7 +522,7 @@ public class EditKecamatanActivity extends AppCompatActivity {
                                         event.child(id).child(nama2).setValue(3);
                                     else if(Integer.parseInt(KK21.getText().toString())<Integer.parseInt(snapshot.child(nama2).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama2).setValue(4);
-                                    else if(Integer.parseInt(KK21.getText().toString())>Integer.parseInt(snapshot.child(nama2).child("Batas").child("BatasV").getValue().toString()))
+                                    else if(Integer.parseInt(KK21.getText().toString())>Integer.parseInt(snapshot.child(nama2).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama2).setValue(5);}
 
                                 else{
@@ -534,7 +534,7 @@ public class EditKecamatanActivity extends AppCompatActivity {
                                         event.child(id).child(nama2).setValue(3);
                                     else if(Integer.parseInt(KK21.getText().toString())<Integer.parseInt(snapshot.child(nama2).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama2).setValue(2);
-                                    else if(Integer.parseInt(KK21.getText().toString())>Integer.parseInt(snapshot.child(nama2).child("Batas").child("BatasV").getValue().toString()))
+                                    else if(Integer.parseInt(KK21.getText().toString())>Integer.parseInt(snapshot.child(nama2).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama2).setValue(1);}
 
 
@@ -568,7 +568,7 @@ public class EditKecamatanActivity extends AppCompatActivity {
                                     event.child(id).child(nama1).setValue(3);
                                 else if(Integer.parseInt(KK11.getText().toString())<Integer.parseInt(snapshot.child(nama1).child("Batas").child("BatasIV").getValue().toString()))
                                     event.child(id).child(nama1).setValue(4);
-                                else if(Integer.parseInt(KK11.getText().toString())>Integer.parseInt(snapshot.child(nama1).child("Batas").child("BatasV").getValue().toString()))
+                                else if(Integer.parseInt(KK11.getText().toString())>Integer.parseInt(snapshot.child(nama1).child("Batas").child("BatasIV").getValue().toString()))
                                     event.child(id).child(nama1).setValue(5);}
 
                                 else{
@@ -580,7 +580,7 @@ public class EditKecamatanActivity extends AppCompatActivity {
                                         event.child(id).child(nama1).setValue(3);
                                     else if(Integer.parseInt(KK11.getText().toString())<Integer.parseInt(snapshot.child(nama1).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama1).setValue(2);
-                                    else if(Integer.parseInt(KK11.getText().toString())>Integer.parseInt(snapshot.child(nama1).child("Batas").child("BatasV").getValue().toString()))
+                                    else if(Integer.parseInt(KK11.getText().toString())>Integer.parseInt(snapshot.child(nama1).child("Batas").child("BatasIV").getValue().toString()))
                                         event.child(id).child(nama1).setValue(1);}
 
 

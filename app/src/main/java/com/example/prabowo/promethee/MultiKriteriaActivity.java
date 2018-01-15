@@ -104,4 +104,9 @@ public class MultiKriteriaActivity extends AppCompatActivity {
         tableLayoutA.addView(row);
 
     }
+
+    public void onBackPressed() {
+        finish();
+        startActivity(new Intent(MultiKriteriaActivity.this, PreferensiActivity.class));
+    }
 }

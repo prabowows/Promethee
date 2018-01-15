@@ -123,7 +123,8 @@
 
 
     <LinearLayout
-        android:layout_marginTop="70dp"
+        android:background="#88ffffff"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -204,10 +205,39 @@
                 android:textColor="#000"
                 android:visibility="gone"/>
         </android.support.design.widget.TextInputLayout>
+
+        <RadioGroup
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <RadioButton
+            android:visibility="gone"
+            android:layout_weight="1"
+            android:id="@+id/CBmax"
+            android:text="Max"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:visibility="gone"
+            android:layout_weight="1"
+            android:id="@+id/CBmin"
+            android:text="Min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:layout_weight="1"
             android:theme="@style/TextAppearence.App.TextInputLayout">
 
             <android.support.design.widget.TextInputEditText
@@ -222,7 +252,7 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:layout_weight="1"
             android:theme="@style/TextAppearence.App.TextInputLayout">
 
             <android.support.design.widget.TextInputEditText
@@ -234,9 +264,101 @@
                 android:textColor="#000"
                 android:visibility="gone"/>
         </android.support.design.widget.TextInputLayout>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:theme="@style/TextAppearence.App.TextInputLayout">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/editGolongan1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Golongan 1"
+                        android:inputType="number"
+                        android:textColor="#000"
+                        android:visibility="gone" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:theme="@style/TextAppearence.App.TextInputLayout">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/editGolongan2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Golongan 2"
+                        android:inputType="number"
+                        android:textColor="#000"
+                        android:visibility="gone"/>
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:theme="@style/TextAppearence.App.TextInputLayout">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/editGolongan3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Golongan 3"
+                        android:inputType="number"
+                        android:textColor="#000"
+                        android:visibility="gone"/>
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:theme="@style/TextAppearence.App.TextInputLayout">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/editGolongan4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Golongan 4"
+                        android:inputType="number"
+                        android:textColor="#000"
+                        android:visibility="gone"/>
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+        <ImageButton
+            android:background="@drawable/bttambah"
+            android:layout_width="30mm"
+            android:layout_height="7mm"
             android:text="Tambah"
             android:id="@+id/buttonTambah"
             android:layout_gravity="center"

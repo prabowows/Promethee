@@ -1,6 +1,7 @@
 package com.example.prabowo.promethee;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -53,6 +54,11 @@ public class ListviewHasilActivity extends AppCompatActivity {
                                     int position, long id) {
                 final String item = (String) parent.getItemAtPosition(position);
                 Toast.makeText(ListviewHasilActivity.this, "Anda ngeklik item" + item, Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(ListviewHasilActivity.this, HasilAkhir.class);
+                intent.putExtra("Koordinat", item);
+                startActivity(intent);
+
             }
 
         });
@@ -67,12 +73,14 @@ public class ListviewHasilActivity extends AppCompatActivity {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                //Menghitung Jumlah Kriteria
                 countKriteria = 0;
                 for (final DataSnapshot postSnap : dataSnapshot.child("Kriteria").getChildren()) {
                     Kriteria[countKriteria] = postSnap.getKey().toString();
                     countKriteria++;
                 }
 
+                //memuat data kriteria beserta bobot dan tipe preferensinya
                 int x = 0, y = 0, bobotCount = 0;
 
                 for (final DataSnapshot postShot : dataSnapshot.child("Kriteria").getChildren()) {
@@ -82,6 +90,7 @@ public class ListviewHasilActivity extends AppCompatActivity {
                     bobotCount++;
 
                 }
+                //Memuat nilai kecamatan
                 for (final DataSnapshot postSnapshot : dataSnapshot.child("Kecamatan").getChildren()) {
                     namaKecamatan[x] = postSnapshot.getKey().toString();
                     for (final DataSnapshot postSnap : dataSnapshot.child("Kecamatan").child(postSnapshot.getKey().toString()).getChildren()) {
@@ -115,6 +124,7 @@ public class ListviewHasilActivity extends AppCompatActivity {
                 //l adalah perpindahan kecamatan perb.1,m perpindahan kecamatan perb.2,k kriteria
 
 
+                //Tipe Preferensi
                 for (int a = 0; a < countKriteria; a++) {
                     switch (preferensiKriteria[a]) {
                         case 1:
@@ -188,6 +198,7 @@ public class ListviewHasilActivity extends AppCompatActivity {
 
                 }
 
+                //Indeks Preferensi
                 for (int i = 0; i < 14; i++) {
                     for (int j = 0; j < 14; j++) {
                         IndeksPreferensi[i][j] = 0.0;
@@ -198,6 +209,7 @@ public class ListviewHasilActivity extends AppCompatActivity {
                     }
                 }
 
+                //Entring Flow, Leaving Flow, Net Flow
                 for (int i = 0; i < 14; i++) {
                     arrLeaving[i] = 0;
                     arrEntering[i] = 0;
@@ -210,6 +222,7 @@ public class ListviewHasilActivity extends AppCompatActivity {
                     arrNet[i] = arrLeaving[i] - arrEntering[i];
                 }
 
+                //Promethee Ranking
                 for (int i = 0; i < 14; i++) {
 
                     int pos = i;
@@ -219,6 +232,7 @@ public class ListviewHasilActivity extends AppCompatActivity {
                         }
                     }
                     ListviewHasilActivity.values[i] = namaKecamatan[pos];
+                    mRootref.child("Kecamatan").child(namaKecamatan[pos]).child("Rangking").setValue(i+1);
                     arrNet[pos] = -100000;
                 }
 
@@ -260,6 +274,12 @@ public class ListviewHasilActivity extends AppCompatActivity {
             return rowView;
         }
     }
-
+    public void onBackPressed() {
+        finish();
+        Bundle extras = getIntent().getExtras();
+        if(extras != null)
+        startActivity(new Intent(ListviewHasilActivity.this, PrometheeRankingActivity.class));
+        else startActivity(new Intent(ListviewHasilActivity.this, MainActivity.class));
+    }
 
 }
