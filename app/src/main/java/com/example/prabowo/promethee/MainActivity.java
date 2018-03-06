@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -27,15 +28,18 @@ public class MainActivity extends AppCompatActivity {
     TableRow row;
     TableLayout tableLayout;
     Button Hapus;
-    ImageButton Tambah, TambahShow, HapusShow, Selesai, BThasil;
+    ImageButton Tambah, TambahShow, HapusShow, Selesai, BThasil,BTeditV;
     EditText editHapus, editTambah1, editTambah2, editTambah3, editBatas1, editBatas2,editGolongan1,editGolongan2,editGolongan3,editGolongan4;
-    RadioButton CBmax,CBmin;
+    RadioButton CBmax,CBmin,CBkual,CBkuan;
+    private static String a="0";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         tableLayout = findViewById(R.id.tableLayoutMenu);
         row = (TableRow) getLayoutInflater().inflate(R.layout.activity_menu_row, null);
+        BTeditV = findViewById(R.id.buttonEdit);
         BThasil = findViewById(R.id.buttonHasil);
         Hapus = findViewById(R.id.buttonHapus);
         Selesai = findViewById(R.id.buttonSelesai);
@@ -54,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
         editGolongan4=findViewById(R.id.editGolongan4);
         CBmax = findViewById(R.id.CBmax);
         CBmin = findViewById(R.id.CBmin);
+        CBkual=findViewById(R.id.CBkual);
+        CBkuan=findViewById(R.id.CBkuan);
 
 
         HapusShow.setOnClickListener(new View.OnClickListener() {
@@ -79,7 +85,14 @@ public class MainActivity extends AppCompatActivity {
                 finish();
                 startActivity(new Intent(MainActivity.this, ListviewHasilActivity.class));
             }
-        }); //Ini belum bisa
+        });
+
+        BTeditV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, EditActivity.class));
+            }
+        });
 
         Selesai.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,7 +107,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (Integer.parseInt(editTambah2.getText().toString()) <= 100 && Integer.parseInt(editTambah2.getText().toString()) >= 0 && Integer.parseInt(editTambah3.getText().toString()) <= 6 && Integer.parseInt(editTambah3.getText().toString()) >= 1) {
+                if(TextUtils.isEmpty(editTambah1.getText().toString()) ||
+                        TextUtils.isEmpty(editTambah2.getText().toString()) ||
+                        TextUtils.isEmpty(editTambah3.getText().toString()) ||
+                        TextUtils.isEmpty(editBatas1.getText().toString()) ||
+                        TextUtils.isEmpty(editBatas2.getText().toString()) ||
+                        TextUtils.isEmpty(editGolongan1.getText().toString())||
+                        TextUtils.isEmpty(editGolongan2.getText().toString())||
+                        TextUtils.isEmpty(editGolongan3.getText().toString())||
+                        TextUtils.isEmpty(editGolongan4.getText().toString())){
+                    Toast.makeText(MainActivity.this, "Lengkapi Data Dahulu", Toast.LENGTH_LONG).show();
+                }
+
+                else if (Integer.parseInt(editTambah2.getText().toString()) <= 100 && Integer.parseInt(editTambah2.getText().toString()) >= 0 && Integer.parseInt(editTambah3.getText().toString()) <= 6 && Integer.parseInt(editTambah3.getText().toString()) >= 1) {
                     if (Integer.parseInt(editTambah3.getText().toString()) == 4 || Integer.parseInt(editTambah3.getText().toString()) == 5)
                         TambahRow(editTambah1.getText().toString(), editTambah2.getText().toString(), editTambah3.getText().toString(), editBatas1.getText().toString(), editBatas2.getText().toString());
                     else if (Integer.parseInt(editTambah3.getText().toString()) == 1)
@@ -104,16 +129,28 @@ public class MainActivity extends AppCompatActivity {
                     Tambah.setVisibility(View.GONE);
                     tableLayout.setVisibility(View.VISIBLE);
                     TambahShow.setVisibility(View.VISIBLE);
+                    finish();
+                    startActivity(getIntent());
 
-                } else Toast.makeText(MainActivity.this, "Inputan salah", Toast.LENGTH_LONG).show();
+                }
+
+
+
+                else Toast.makeText(MainActivity.this, "Inputan salah", Toast.LENGTH_LONG).show();
+
             }
         });
 
         TambahShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                CBkual.setVisibility(view.VISIBLE);
+                CBkuan.setVisibility(view.VISIBLE);
                 CBmax.setVisibility(view.VISIBLE);
                 CBmin.setVisibility(view.VISIBLE);
+                BTeditV.setVisibility(view.GONE);
+                BThasil.setVisibility(view.GONE);
+                Selesai.setVisibility(view.GONE);
                 HapusShow.setVisibility(view.GONE);
                 tableLayout.setVisibility(view.GONE);
                 editHapus.setVisibility(view.GONE);
@@ -148,48 +185,76 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-
-
-
         mRootref = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference event = mRootref.child("Kriteria");
-        event.addListenerForSingleValueEvent(new ValueEventListener() {
+        //mRootref.child("Kode").child("Row").setValue("1");
+
+
+
+        DatabaseReference event2 = mRootref.child("Kode").child("Row");
+        event2.addListenerForSingleValueEvent(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                int countBatas = 0;
-                for (final DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                    String a = postSnapshot.getKey().toString();
-                    String b = postSnapshot.child("Bobot" + a).getValue().toString();
-                    String c = postSnapshot.child("Preferensi" + a).getValue().toString();
-                    String d = postSnapshot.child("Batas1").getValue().toString();
-                    String e = postSnapshot.child("Batas2").getValue().toString();
-                    InsertRow(a, b, c, d, e);
-                    switch (Integer.parseInt(c.toString())) {
-                        case 1:
-                            break;
-                        case 2:
-                            PreferensiActivity.batasPref[0][countBatas] = Integer.parseInt(d.toString());
-                            break;
-                        case 3:
-                            PreferensiActivity.batasPref[1][countBatas] = Integer.parseInt(d.toString());
-                            break;
-                        case 4:
-                            PreferensiActivity.batasPref[2][countBatas] = Integer.parseInt(d.toString());
-                            PreferensiActivity.batasPref[3][countBatas] = Integer.parseInt(e.toString());
-                            break;
-                        case 5:
-                            PreferensiActivity.batasPref[5][countBatas] = Integer.parseInt(d.toString());
-                            PreferensiActivity.batasPref[4][countBatas] = Integer.parseInt(e.toString());
-                            break;
-                        case 6:
-                            PreferensiActivity.batasPref[6][countBatas] = Integer.parseInt(d.toString());
-                            break;
-                    }
-                    countBatas++;
 
 
-                }
+
+
+           if(dataSnapshot.getValue().toString().equals( "0")) {
+               DatabaseReference event = mRootref.child("Kriteria");
+               event.addListenerForSingleValueEvent(new ValueEventListener() {
+
+                   @Override
+                   public void onDataChange(DataSnapshot dataSnapshot) {
+                       int countBatas = 0;
+                       for (final DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                           String a = postSnapshot.getKey().toString();
+                           String b = postSnapshot.child("Bobot" + a).getValue().toString();
+                           String c = postSnapshot.child("Preferensi" + a).getValue().toString();
+                           String d = postSnapshot.child("Batas1").getValue().toString();
+                           String e = postSnapshot.child("Batas2").getValue().toString();
+                           InsertRow(a, b, c, d, e);
+                           switch (Integer.parseInt(c.toString())) {
+                               case 1:
+                                   break;
+                               case 2:
+                                   PreferensiActivity.batasPref[0][countBatas] = Integer.parseInt(d.toString());
+                                   break;
+                               case 3:
+                                   PreferensiActivity.batasPref[1][countBatas] = Integer.parseInt(d.toString());
+                                   break;
+                               case 4:
+                                   PreferensiActivity.batasPref[2][countBatas] = Integer.parseInt(d.toString());
+                                   PreferensiActivity.batasPref[3][countBatas] = Integer.parseInt(e.toString());
+                                   break;
+                               case 5:
+                                   PreferensiActivity.batasPref[5][countBatas] = Integer.parseInt(d.toString());
+                                   PreferensiActivity.batasPref[4][countBatas] = Integer.parseInt(e.toString());
+                                   break;
+                               case 6:
+                                   PreferensiActivity.batasPref[6][countBatas] = Integer.parseInt(d.toString());
+                                   break;
+                           }
+                           countBatas++;
+                           mRootref.child("Kode").child("Row").setValue("1");
+
+
+                       }
+
+                   }
+
+                   @Override
+                   public void onCancelled(DatabaseError databaseError) {
+                   }
+
+               });
+           }
+           else{
+               finish();
+               startActivity(getIntent());
+               mRootref.child("Kode").child("Row").setValue("0");
+
+
+           }
 
             }
 
@@ -200,7 +265,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-    }
+        }
+
 
     public void InsertRow(String kriteria, String bobot, String preferensi, String batas1, String batas2) {
         tableLayout = findViewById(R.id.tableLayoutMenu);
@@ -243,6 +309,12 @@ public class MainActivity extends AppCompatActivity {
         if(CBmin.isChecked()){
             mRootref.child("Kriteria").child(kriteria).child("Kaidah").setValue("min");
         }
+        if(CBkual.isChecked()){
+            mRootref.child("Kriteria").child(kriteria).child("Tipe Data").setValue("Kualitatif");
+        }
+        if(CBkuan.isChecked()){
+            mRootref.child("Kriteria").child(kriteria).child("Tipe Data").setValue("Kuantitatif");
+        }
 
 
         DatabaseReference event = mRootref.child("Kecamatan");
@@ -253,6 +325,7 @@ public class MainActivity extends AppCompatActivity {
                 for (final DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     String a = postSnapshot.getKey().toString();
                     mRootref.child("Kecamatan").child(a).child(kriteria).setValue(0);
+                    mRootref.child("Nilai Real").child(a).child(kriteria).setValue(0);
 
 
                 }
@@ -294,6 +367,29 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
+
+        DatabaseReference event2 = mRootref.child("Nilai Real");
+        event2.addListenerForSingleValueEvent(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (final DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    postSnapshot.child(text2).getRef().removeValue();
+
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+
+        });
+
+        finish();
+        startActivity(getIntent());
 
     }
 

@@ -36,6 +36,7 @@
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/Theme.AppCompat.NoActionBar" >
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -59,7 +60,10 @@
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity android:name="com.example.prabowo.promethee.PreferensiActivity" />
-        <activity android:name="com.example.prabowo.promethee.MainActivity" />
+        <activity
+            android:name="com.example.prabowo.promethee.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
         <activity android:name="com.example.prabowo.promethee.ListKecamatanSet.SetKecamatanActivity" />
         <activity android:name="com.example.prabowo.promethee.MultiKriteriaActivity" />
         <activity android:name="com.example.prabowo.promethee.PrometheeRankingActivity" />
@@ -67,6 +71,7 @@
         <activity android:name="com.example.prabowo.promethee.ListviewHasilActivity" />
         <activity android:name="com.example.prabowo.promethee.HasilAkhirActivity" />
         <activity android:name="com.example.prabowo.promethee.HasilAkhir" />
+        <activity android:name="com.example.prabowo.promethee.EditActivity" />
 
         <meta-data
             android:name="android.support.VERSION"

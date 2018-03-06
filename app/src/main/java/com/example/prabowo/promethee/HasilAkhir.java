@@ -111,88 +111,103 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
         mMap = googleMap;
         Bundle extras = getIntent().getExtras();
         String Koordinat = extras.getString("Koordinat");
+        LatLng Gondokusuman = new LatLng(-7.786141, 110.380372);
+        LatLng Danurejan = new LatLng(-7.792714, 110.372069);
+        LatLng Gedongtengen = new LatLng(-7.791625, 110.361137);
+        LatLng Gondomanan = new LatLng(-7.801154, 110.367953);
+
+
 
         // Add a marker in Sydney and move the camera
         if(Koordinat.equals("Gondokusuman")){
-        LatLng Gondokusuman = new LatLng(-7.786141, 110.380372);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Gondokusuman, 15));
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             mMap.addMarker(new MarkerOptions().position(Gondokusuman).title(Koordinat));}
 
         if(Koordinat.equals("Danurejan")){
-        LatLng Danurejan = new LatLng(-7.792714, 110.372069);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Danurejan , 15));
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             mMap.addMarker(new MarkerOptions().position(Danurejan).title(Koordinat));}
 
         if(Koordinat.equals("Gedongtengen")){
-        LatLng Gedongtengen = new LatLng(-7.791625, 110.361137);
+
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Gedongtengen, 15));
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         mMap.addMarker(new MarkerOptions().position(Gedongtengen).title(Koordinat));}
 
         if(Koordinat.equals("Gondomanan")){
-        LatLng Gondomanan = new LatLng(-7.801154, 110.367953);
+
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Gondomanan, 15));
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             mMap.addMarker(new MarkerOptions().position(Gondomanan).title(Koordinat));}
 
-        if(Koordinat.equals("Jetis")){
         LatLng Jetis = new LatLng(-7.782069, 110.364994);
+        if(Koordinat.equals("Jetis")){
+
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Jetis, 15));
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             mMap.addMarker(new MarkerOptions().position(Jetis).title(Koordinat));}
 
-        if(Koordinat.equals("Kotagede")){
         LatLng Kotagede = new LatLng(-7.816991, 110.398072);
+        if(Koordinat.equals("Kotagede")){
+
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Kotagede, 15));
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             mMap.addMarker(new MarkerOptions().position(Kotagede).title(Koordinat));}
 
-        if(Koordinat.equals("Kraton")){
+
         LatLng Kraton = new LatLng(-7.808602, 110.362656);
+        if(Koordinat.equals("Kraton")){
+
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Kraton, 15));
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             mMap.addMarker(new MarkerOptions().position(Kraton).title(Koordinat));}
 
-        if(Koordinat.equals("Mantrijeron")){
         LatLng Mantrijeron = new LatLng(-7.818710, 110.359767);
+        if(Koordinat.equals("Mantrijeron")){
+
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Mantrijeron, 15));
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             mMap.addMarker(new MarkerOptions().position(Mantrijeron).title(Koordinat));}
 
-        if(Koordinat.equals("Mergangsan")){
         LatLng Mergangsan = new LatLng(-7.814062, 110.372862);
+        if(Koordinat.equals("Mergangsan")){
+
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Mergangsan, 15));
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             mMap.addMarker(new MarkerOptions().position(Mergangsan).title(Koordinat));}
 
-        if(Koordinat.equals("Ngampilan")){
         LatLng Ngampilan = new LatLng(-7.798244, 110.358622);
+        if(Koordinat.equals("Ngampilan")){
+
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Ngampilan, 15));
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             mMap.addMarker(new MarkerOptions().position(Ngampilan).title(Koordinat));}
 
-        if(Koordinat.equals("Pakualaman")){
         LatLng Pakualaman = new LatLng(-7.799547, 110.376136);
+        if(Koordinat.equals("Pakualaman")){
+
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Pakualaman, 15));
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             mMap.addMarker(new MarkerOptions().position(Pakualaman).title(Koordinat));}
 
-        if(Koordinat.equals("Tegalrejo")){
         LatLng Tegalrejo = new LatLng(-7.781013, 110.354193);
+        if(Koordinat.equals("Tegalrejo")){
+
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Tegalrejo, 15));
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             mMap.addMarker(new MarkerOptions().position(Tegalrejo).title(Koordinat));}
 
-        if(Koordinat.equals("Umbulharjo")){
         LatLng Umbulharjo = new LatLng(-7.815936, 110.385549);
+        if(Koordinat.equals("Umbulharjo")){
+
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Umbulharjo, 15));
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             mMap.addMarker(new MarkerOptions().position(Umbulharjo).title(Koordinat));}
 
-        if(Koordinat.equals("Wirobrajan")){
         LatLng Wirobrajan = new LatLng(-7.802934, 110.350569);
+        if(Koordinat.equals("Wirobrajan")){
+
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Wirobrajan, 15));
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             mMap.addMarker(new MarkerOptions().position(Wirobrajan).title(Koordinat));}
@@ -201,9 +216,22 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
         // Instantiates a new Polyline object and adds points to define a rectangle
 
+        mMap.addMarker(new MarkerOptions().position(Gondokusuman).title("Gondokusuman"));
+        mMap.addMarker(new MarkerOptions().position(Danurejan).title("Danurejan"));
+        mMap.addMarker(new MarkerOptions().position(Gedongtengen).title("Gedongtengen"));
+        mMap.addMarker(new MarkerOptions().position(Gondomanan).title("Gondomaanan"));
+        mMap.addMarker(new MarkerOptions().position(Jetis).title("Jetis"));
+        mMap.addMarker(new MarkerOptions().position(Kotagede).title("Kotagede"));
+        mMap.addMarker(new MarkerOptions().position(Kraton).title("Kraton"));
+        mMap.addMarker(new MarkerOptions().position(Mantrijeron).title("Mantrijeron"));
+        mMap.addMarker(new MarkerOptions().position(Mergangsan).title("Mergangsan"));
+        mMap.addMarker(new MarkerOptions().position(Ngampilan).title("Ngampilan"));
+        mMap.addMarker(new MarkerOptions().position(Pakualaman).title("Pakualaman"));
+        mMap.addMarker(new MarkerOptions().position(Tegalrejo).title("Tegalrejo"));
+        mMap.addMarker(new MarkerOptions().position(Wirobrajan).title("Wirobrajan"));
+        mMap.addMarker(new MarkerOptions().position(Umbulharjo).title("Umbulharjo"));
 
-
-            DatabaseReference refd = mRootref.child("Kecamatan").child("Gondokusuman").child("Rangking");
+            DatabaseReference refd = mRootref.child("Rangking").child("Gondokusuman").child("Rangking");
             refd.addValueEventListener(new ValueEventListener() {
 
                 @Override
@@ -227,9 +255,6 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
 
                         Polygon line = mMap.addPolygon(new PolygonOptions().addAll(mListLatLngGondokusuman).strokeColor(Color.RED));
-                        //line.setPoints(mListLatLngGondokusuman);
-                        //line.setFillColor(0x7F0000FF)//blue
-                        //line.setFillColor(0x7F00FF00)//green;
                         line.setFillColor(0x7FFF0000);
 
 
@@ -322,7 +347,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
           //DANUREJAN DANUREJAN DANUREJAN DANUREJAN DANUREJAN DANUREJAN DANUREJAN DANUREJAN DANUREJAN
 
-        DatabaseReference refdd = mRootref.child("Kecamatan").child("Danurejan").child("Rangking");
+        DatabaseReference refdd = mRootref.child("Rangking").child("Danurejan").child("Rangking");
         refdd.addValueEventListener(new ValueEventListener() {
 
             @Override
@@ -442,7 +467,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
         //WIROBRAJAN //WIROBRAJAN //WIROBRAJAN //WIROBRAJAN //WIROBRAJAN //WIROBRAJAN //WIROBRAJAN //WIROBRAJAN
 
 
-        DatabaseReference refds = mRootref.child("Kecamatan").child("Wirobrajan").child("Rangking");
+        DatabaseReference refds = mRootref.child("Rangking").child("Wirobrajan").child("Rangking");
         refds.addValueEventListener(new ValueEventListener() {
 
             @Override
@@ -559,7 +584,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
         //Gedongtengen Gedongtengen Gedongtengen Gedongtengen Gedongtengen Gedongtengen Gedongtengen Gedongtengen Gedongtengen Gedongtengen
 
 
-        DatabaseReference refdf = mRootref.child("Kecamatan").child("Gedongtengen").child("Rangking");
+        DatabaseReference refdf = mRootref.child("Rangking").child("Gedongtengen").child("Rangking");
         refdf.addValueEventListener(new ValueEventListener() {
 
             @Override
@@ -675,7 +700,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
         //GONDOMANAN GONDOMANAN //GONDOMANAN GONDOMANAN //GONDOMANAN GONDOMANAN //GONDOMANAN GONDOMANAN //GONDOMANAN GONDOMANAN //GONDOMANAN GONDOMANAN
 
 
-        DatabaseReference refff = mRootref.child("Kecamatan").child("Gondomanan").child("Rangking");
+        DatabaseReference refff = mRootref.child("Rangking").child("Gondomanan").child("Rangking");
         refff.addValueEventListener(new ValueEventListener() {
 
             @Override
@@ -791,7 +816,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
         //JETIS JETIS //JETIS JETIS //JETIS JETIS //JETIS JETIS //JETIS JETIS //JETIS JETIS //JETIS JETIS
 
 
-        DatabaseReference refffs = mRootref.child("Kecamatan").child("Jetis").child("Rangking");
+        DatabaseReference refffs = mRootref.child("Rangking").child("Jetis").child("Rangking");
         refffs.addValueEventListener(new ValueEventListener() {
 
             @Override
@@ -907,7 +932,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
         //KOTAGEDE KOTAGEDE //KOTAGEDE KOTAGEDE //KOTAGEDE KOTAGEDE //KOTAGEDE KOTAGEDE //KOTAGEDE KOTAGEDE //KOTAGEDE KOTAGEDE
 
-        DatabaseReference reffs = mRootref.child("Kecamatan").child("Kotagede").child("Rangking");
+        DatabaseReference reffs = mRootref.child("Rangking").child("Kotagede").child("Rangking");
         reffs.addValueEventListener(new ValueEventListener() {
 
             @Override
@@ -1022,7 +1047,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
         //KRATON KRATON //KRATON KRATON //KRATON KRATON //KRATON KRATON //KRATON KRATON //KRATON KRATON //KRATON KRATON
 
-        DatabaseReference refs = mRootref.child("Kecamatan").child("Kraton").child("Rangking");
+        DatabaseReference refs = mRootref.child("Rangking").child("Kraton").child("Rangking");
         refs.addValueEventListener(new ValueEventListener() {
 
             @Override
@@ -1138,7 +1163,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
         //Mantrijeron Mantrijeron //Mantrijeron Mantrijeron //Mantrijeron Mantrijeron //Mantrijeron Mantrijeron //Mantrijeron Mantrijeron
 
 
-        DatabaseReference refxs = mRootref.child("Kecamatan").child("Mantrijeron").child("Rangking");
+        DatabaseReference refxs = mRootref.child("Rangking").child("Mantrijeron").child("Rangking");
         refxs.addValueEventListener(new ValueEventListener() {
 
             @Override
@@ -1254,7 +1279,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
         //Mergangsan Mergangsan //Mergangsan Mergangsan //Mergangsan Mergangsan //Mergangsan Mergangsan //Mergangsan Mergangsan
 
 
-        DatabaseReference resxs = mRootref.child("Kecamatan").child("Mergangsan").child("Rangking");
+        DatabaseReference resxs = mRootref.child("Rangking").child("Mergangsan").child("Rangking");
         resxs.addValueEventListener(new ValueEventListener() {
 
             @Override
@@ -1370,7 +1395,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
         //Ngampilan Ngampilan //Ngampilan Ngampilan //Ngampilan Ngampilan //Ngampilan Ngampilan //Ngampilan Ngampilan
 
 
-        DatabaseReference resss = mRootref.child("Kecamatan").child("Ngampilan").child("Rangking");
+        DatabaseReference resss = mRootref.child("Rangking").child("Ngampilan").child("Rangking");
         resss.addValueEventListener(new ValueEventListener() {
 
             @Override
@@ -1485,7 +1510,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
         //Pakualaman Pakualaman //Pakualaman Pakualaman //Pakualaman Pakualaman //Pakualaman Pakualaman
 
 
-        DatabaseReference reds = mRootref.child("Kecamatan").child("Pakualaman").child("Rangking");
+        DatabaseReference reds = mRootref.child("Rangking").child("Pakualaman").child("Rangking");
         reds.addValueEventListener(new ValueEventListener() {
 
             @Override
@@ -1600,7 +1625,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
         //Tegalrejo Tegalrejo //Tegalrejo Tegalrejo //Tegalrejo Tegalrejo //Tegalrejo Tegalrejo //Tegalrejo Tegalrejo
 
-        DatabaseReference redsd = mRootref.child("Kecamatan").child("Tegalrejo").child("Rangking");
+        DatabaseReference redsd = mRootref.child("Rangking").child("Tegalrejo").child("Rangking");
         redsd.addValueEventListener(new ValueEventListener() {
 
             @Override
@@ -1716,7 +1741,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
         //Umbulharjo Umbulharjo //Umbulharjo Umbulharjo //Umbulharjo Umbulharjo //Umbulharjo Umbulharjo //Umbulharjo Umbulharjo
 
 
-        DatabaseReference rrdsd = mRootref.child("Kecamatan").child("Umbulharjo").child("Rangking");
+        DatabaseReference rrdsd = mRootref.child("Rangking").child("Umbulharjo").child("Rangking");
         rrdsd.addValueEventListener(new ValueEventListener() {
 
             @Override
@@ -1834,7 +1859,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
     public void onBackPressed() {
         finish();
-        startActivity(new Intent(HasilAkhir.this, MainActivity.class));
+        startActivity(new Intent(HasilAkhir.this, ListviewHasilActivity.class));
     }
 
 

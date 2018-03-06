@@ -13,6 +13,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.example.prabowo.promethee.ListKecamatanSet.EditKecamatanActivity;
+import com.example.prabowo.promethee.ListKecamatanSet.SetKecamatanActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -324,7 +325,7 @@ public class PreferensiActivity extends AppCompatActivity {
                 case 2:
                     for (int i = 0; i < 14; i++) {
                         for (int j = 0; j < 14; j++) {
-                            if (Math.abs(arrPrefD[i][j][a]) <= batasPref[0][a])
+                            if ((arrPrefD[i][j][a]) <= batasPref[0][a])
                                 arrPrefHd[i][j][a] = 0;
                             else arrPrefHd[i][j][a] = 1;
                         }
@@ -333,30 +334,35 @@ public class PreferensiActivity extends AppCompatActivity {
                 case 3:
                     for (int i = 0; i < 14; i++) {
                         for (int j = 0; j < 14; j++) {
-                            if (Math.abs(arrPrefD[i][j][a]) <= batasPref[1][a])
+                            if (((arrPrefD[i][j][a]) <= batasPref[1][a]) && (arrPrefD[i][j][a]) > 0)
                                 arrPrefHd[i][j][a] = Math.abs(arrPrefD[i][j][a]) / batasPref[1][a];
-                            else arrPrefHd[i][j][a] = 1;
+                            else if  ((arrPrefD[i][j][a]) > batasPref[1][a])
+                            arrPrefHd[i][j][a] = 1;
+                            else
+                            arrPrefHd[i][j][a] = 0;
+
                         }
                     }
                     break;
                 case 4:
                     for (int i = 0; i < 14; i++) {
                         for (int j = 0; j < 14; j++) {
-                            if (Math.abs(arrPrefD[i][j][a]) <= batasPref[3][a])
+                            if ((arrPrefD[i][j][a]) <= batasPref[2][a])
                                 arrPrefHd[i][j][a] = 0;
-                            else if (Math.abs(arrPrefD[i][j][a]) <= (batasPref[2][a] + batasPref[3][a]))
+                            else if ((arrPrefD[i][j][a]) <= batasPref[3][a] && (arrPrefD[i][j][a]) > batasPref[2][a])
                                 arrPrefHd[i][j][a] = 0.5;
                             else arrPrefHd[i][j][a] = 1;
                         }
                     }
                     break;
+
                 case 5:
                     for (int i = 0; i < 14; i++) {
                         for (int j = 0; j < 14; j++) {
-                            if (Math.abs(arrPrefD[i][j][a]) <= batasPref[4][a])
+                            if ((arrPrefD[i][j][a]) <= batasPref[5][a])
                                 arrPrefHd[i][j][a] = 0;
-                            else if (Math.abs(arrPrefD[i][j][a]) <= (batasPref[4][a] + batasPref[5][a]))
-                                arrPrefHd[i][j][a] = (Math.abs(arrPrefD[i][j][a]) - batasPref[4][a]) / batasPref[5][a];
+                            else if ((arrPrefD[i][j][a]) <= batasPref[4][a] && (arrPrefD[i][j][a]) > batasPref[5][a] )
+                                arrPrefHd[i][j][a] = (Math.abs((arrPrefD[i][j][a]) - batasPref[5][a])/(batasPref[4][a]-batasPref[5][a]));
                             else arrPrefHd[i][j][a] = 1;
                         }
                     }
@@ -386,7 +392,7 @@ public class PreferensiActivity extends AppCompatActivity {
 
     public void onBackPressed() {
         finish();
-        startActivity(new Intent(PreferensiActivity.this, EditKecamatanActivity.class));
+        startActivity(new Intent(PreferensiActivity.this, SetKecamatanActivity.class));
     }
 }
 

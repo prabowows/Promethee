@@ -2,6 +2,7 @@ package com.example.prabowo.promethee;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -139,7 +141,7 @@ public class ListviewHasilActivity extends AppCompatActivity {
                         case 2:
                             for (int i = 0; i < 14; i++) {
                                 for (int j = 0; j < 14; j++) {
-                                    if (Math.abs(arrPrefD[i][j][a]) <= batasPref[0][a])
+                                    if ((arrPrefD[i][j][a]) <= batasPref[0][a])
                                         arrPrefHd[i][j][a] = 0;
                                     else arrPrefHd[i][j][a] = 1;
                                 }
@@ -148,30 +150,35 @@ public class ListviewHasilActivity extends AppCompatActivity {
                         case 3:
                             for (int i = 0; i < 14; i++) {
                                 for (int j = 0; j < 14; j++) {
-                                    if (Math.abs(arrPrefD[i][j][a]) <= batasPref[1][a])
+                                    if (((arrPrefD[i][j][a]) <= batasPref[1][a]) && (arrPrefD[i][j][a]) > 0)
                                         arrPrefHd[i][j][a] = Math.abs(arrPrefD[i][j][a]) / batasPref[1][a];
-                                    else arrPrefHd[i][j][a] = 1;
+                                    else if  ((arrPrefD[i][j][a]) > batasPref[1][a])
+                                        arrPrefHd[i][j][a] = 1;
+                                    else
+                                        arrPrefHd[i][j][a] = 0;
+
                                 }
                             }
                             break;
                         case 4:
                             for (int i = 0; i < 14; i++) {
                                 for (int j = 0; j < 14; j++) {
-                                    if (Math.abs(arrPrefD[i][j][a]) <= batasPref[3][a])
+                                    if ((arrPrefD[i][j][a]) <= batasPref[2][a])
                                         arrPrefHd[i][j][a] = 0;
-                                    else if (Math.abs(arrPrefD[i][j][a]) <= (batasPref[2][a] + batasPref[3][a]))
+                                    else if ((arrPrefD[i][j][a]) <= batasPref[3][a] && (arrPrefD[i][j][a]) > batasPref[2][a])
                                         arrPrefHd[i][j][a] = 0.5;
                                     else arrPrefHd[i][j][a] = 1;
                                 }
                             }
                             break;
+
                         case 5:
                             for (int i = 0; i < 14; i++) {
                                 for (int j = 0; j < 14; j++) {
-                                    if (Math.abs(arrPrefD[i][j][a]) <= batasPref[4][a])
+                                    if ((arrPrefD[i][j][a]) <= batasPref[5][a])
                                         arrPrefHd[i][j][a] = 0;
-                                    else if (Math.abs(arrPrefD[i][j][a]) <= (batasPref[4][a] + batasPref[5][a]))
-                                        arrPrefHd[i][j][a] = (Math.abs(arrPrefD[i][j][a]) - batasPref[4][a]) / batasPref[5][a];
+                                    else if ((arrPrefD[i][j][a]) <= batasPref[4][a] && (arrPrefD[i][j][a]) > batasPref[5][a] )
+                                        arrPrefHd[i][j][a] = (Math.abs((arrPrefD[i][j][a]) - batasPref[5][a])/(batasPref[4][a]-batasPref[5][a]));
                                     else arrPrefHd[i][j][a] = 1;
                                 }
                             }
@@ -232,7 +239,7 @@ public class ListviewHasilActivity extends AppCompatActivity {
                         }
                     }
                     ListviewHasilActivity.values[i] = namaKecamatan[pos];
-                    mRootref.child("Kecamatan").child(namaKecamatan[pos]).child("Rangking").setValue(i+1);
+                    mRootref.child("Rangking").child(namaKecamatan[pos]).child("Rangking").setValue(i+1);
                     arrNet[pos] = -100000;
                 }
 
@@ -266,10 +273,16 @@ public class ListviewHasilActivity extends AppCompatActivity {
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View rowView = inflater.inflate(R.layout.activity_item_listview_hasil, parent, false);
             TextView textView = (TextView) rowView.findViewById(R.id.textListviewHasil);
+            ImageView imageView = (ImageView) rowView.findViewById(R.id.imageViewhasil);
             textView.setText(values[position]);
             if (position <= 3) {
                 textView.setBackgroundResource(R.color.Merah);
-            } else if (position <= 8) textView.setBackgroundResource(R.color.Coklat);
+                imageView.setBackgroundResource(R.color.Merah);
+
+            } else if (position <= 8) {textView.setBackgroundResource(R.color.colorPrimary);
+            imageView.setBackgroundResource(R.color.colorPrimary);}
+            else if (position <= 14) {textView.setBackgroundResource(R.color.Hijau);
+            imageView.setBackgroundResource(R.color.Hijau);}
 
             return rowView;
         }
