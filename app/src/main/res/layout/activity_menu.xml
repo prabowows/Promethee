@@ -57,7 +57,7 @@
 
     <ImageButton
         android:layout_marginTop="10dp"
-        android:background="@drawable/btpro"
+        android:background="@drawable/btedit"
         android:textStyle="bold"
         android:id="@+id/buttonEdit"
         android:layout_width="30mm"
