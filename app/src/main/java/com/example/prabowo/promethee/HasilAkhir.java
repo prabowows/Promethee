@@ -84,6 +84,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
     DatabaseReference mRootref = FirebaseDatabase.getInstance().getReference();
     private String alamat, warna;
     private String rank;
+    private float wasiag,rawas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -231,14 +232,17 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
         mMap.addMarker(new MarkerOptions().position(Wirobrajan).title("Wirobrajan"));
         mMap.addMarker(new MarkerOptions().position(Umbulharjo).title("Umbulharjo"));
 
-            DatabaseReference refd = mRootref.child("Rangking").child("Gondokusuman").child("Rangking");
+            DatabaseReference refd = mRootref.child("Batas");
             refd.addValueEventListener(new ValueEventListener() {
 
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-                    rank = dataSnapshot.getValue().toString();
+                    rank = dataSnapshot.child("Gondokusuman").child("Netflow").getValue().toString();
+                    wasiag = Float.parseFloat(dataSnapshot.child("Wasiag").getValue().toString());
+                    rawas = Float.parseFloat(dataSnapshot.child("Rawas").getValue().toString());
 
-            if (Integer.parseInt(rank) <= 4 && Integer.parseInt(rank) >0) {
+
+            if (Float.parseFloat(rank) >= rawas ) {
 
                 DatabaseReference ref = mRootref.child("Peta").child("Gondokusuman").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -269,7 +273,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                 });
             }
 
-            if (Integer.parseInt(rank) <= 9 && Integer.parseInt(rank) > 4) {
+            if (Float.parseFloat(rank) < rawas && Float.parseFloat(rank) > wasiag) {
                 alamat = "Danurejan";
 
                 DatabaseReference refx = mRootref.child("Peta").child("Gondokusuman").child("geometries").child("0").child("coordinates").child("0").child("0");
@@ -303,7 +307,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
             }
 
-                if (Integer.parseInt(rank) <= 14 && Integer.parseInt(rank) > 9) {
+                if (Float.parseFloat(rank) <= wasiag ) {
 
                     DatabaseReference refxx = mRootref.child("Peta").child("Gondokusuman").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -347,14 +351,16 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
           //DANUREJAN DANUREJAN DANUREJAN DANUREJAN DANUREJAN DANUREJAN DANUREJAN DANUREJAN DANUREJAN
 
-        DatabaseReference refdd = mRootref.child("Rangking").child("Danurejan").child("Rangking");
+        DatabaseReference refdd = mRootref.child("Batas");
         refdd.addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                rank = dataSnapshot.getValue().toString();
+                rank = dataSnapshot.child("Danurejan").child("Netflow").getValue().toString();
+                wasiag = Float.parseFloat(dataSnapshot.child("Wasiag").getValue().toString());
+                rawas = Float.parseFloat(dataSnapshot.child("Rawas").getValue().toString());
 
-                if (Integer.parseInt(rank) <= 4 && Integer.parseInt(rank) >0) {
+                if (Float.parseFloat(rank) >= rawas ) {
 
                     DatabaseReference ref = mRootref.child("Peta").child("Danurejan").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -384,7 +390,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                     });
                 }
 
-                if (Integer.parseInt(rank) <= 9 && Integer.parseInt(rank) > 4) {
+                if (Float.parseFloat(rank) < rawas && Float.parseFloat(rank) > wasiag) {
                     alamat = "Danurejan";
 
                     DatabaseReference refx = mRootref.child("Peta").child("Danurejan").child("geometries").child("0").child("coordinates").child("0").child("0");
@@ -421,7 +427,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                 }
 
-                if (Integer.parseInt(rank) <= 14 && Integer.parseInt(rank) > 9) {
+                if (Float.parseFloat(rank) <= wasiag) {
 
                     DatabaseReference refxx = mRootref.child("Peta").child("Danurejan").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -467,14 +473,16 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
         //WIROBRAJAN //WIROBRAJAN //WIROBRAJAN //WIROBRAJAN //WIROBRAJAN //WIROBRAJAN //WIROBRAJAN //WIROBRAJAN
 
 
-        DatabaseReference refds = mRootref.child("Rangking").child("Wirobrajan").child("Rangking");
+        DatabaseReference refds = mRootref.child("Batas");
         refds.addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                rank = dataSnapshot.getValue().toString();
+                rank = dataSnapshot.child("Wirobrajan").child("Netflow").getValue().toString();
+                wasiag = Float.parseFloat(dataSnapshot.child("Wasiag").getValue().toString());
+                rawas = Float.parseFloat(dataSnapshot.child("Rawas").getValue().toString());
 
-                if (Integer.parseInt(rank) <= 4 && Integer.parseInt(rank) >0) {
+                if (Float.parseFloat(rank) >= rawas) {
 
                     DatabaseReference ref = mRootref.child("Peta").child("Wirobrajan").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -504,7 +512,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                     });
                 }
 
-                if (Integer.parseInt(rank) <= 9 && Integer.parseInt(rank) > 4) {
+                if (Float.parseFloat(rank) < rawas && Float.parseFloat(rank) > wasiag) {
                     alamat = "Danurejan";
 
                     DatabaseReference refx = mRootref.child("Peta").child("Wirobrajan").child("geometries").child("0").child("coordinates").child("0").child("0");
@@ -538,7 +546,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                 }
 
-                if (Integer.parseInt(rank) <= 14 && Integer.parseInt(rank) > 9) {
+                if (Float.parseFloat(rank) <= wasiag) {
 
                     DatabaseReference refxx = mRootref.child("Peta").child("Wirobrajan").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -584,14 +592,16 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
         //Gedongtengen Gedongtengen Gedongtengen Gedongtengen Gedongtengen Gedongtengen Gedongtengen Gedongtengen Gedongtengen Gedongtengen
 
 
-        DatabaseReference refdf = mRootref.child("Rangking").child("Gedongtengen").child("Rangking");
+        DatabaseReference refdf = mRootref.child("Batas");
         refdf.addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                rank = dataSnapshot.getValue().toString();
+                rank = dataSnapshot.child("Gedongtengen").child("Netflow").getValue().toString();
+                wasiag = Float.parseFloat(dataSnapshot.child("Wasiag").getValue().toString());
+                rawas = Float.parseFloat(dataSnapshot.child("Rawas").getValue().toString());
 
-                if (Integer.parseInt(rank) <= 4 && Integer.parseInt(rank) >0) {
+                if (Float.parseFloat(rank) >= rawas) {
 
                     DatabaseReference ref = mRootref.child("Peta").child("Gedongtengen").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -621,7 +631,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                     });
                 }
 
-                if (Integer.parseInt(rank) <= 9 && Integer.parseInt(rank) > 4) {
+                if (Float.parseFloat(rank) < rawas && Float.parseFloat(rank) > wasiag) {
 
 
                     DatabaseReference refx = mRootref.child("Peta").child("Gedongtengen").child("geometries").child("0").child("coordinates").child("0").child("0");
@@ -655,7 +665,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                 }
 
-                if (Integer.parseInt(rank) <= 14 && Integer.parseInt(rank) > 9) {
+                if (Float.parseFloat(rank) <= wasiag) {
 
                     DatabaseReference refxx = mRootref.child("Peta").child("Gedongtengen").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -700,14 +710,17 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
         //GONDOMANAN GONDOMANAN //GONDOMANAN GONDOMANAN //GONDOMANAN GONDOMANAN //GONDOMANAN GONDOMANAN //GONDOMANAN GONDOMANAN //GONDOMANAN GONDOMANAN
 
 
-        DatabaseReference refff = mRootref.child("Rangking").child("Gondomanan").child("Rangking");
+        DatabaseReference refff = mRootref.child("Batas");
         refff.addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                rank = dataSnapshot.getValue().toString();
+                rank = dataSnapshot.child("Gondomanan").child("Netflow").getValue().toString();
+                wasiag = Float.parseFloat(dataSnapshot.child("Wasiag").getValue().toString());
+                rawas = Float.parseFloat(dataSnapshot.child("Rawas").getValue().toString());
 
-                if (Integer.parseInt(rank) <= 4 && Integer.parseInt(rank) >0) {
+
+                if (Float.parseFloat(rank) >= rawas) {
 
                     DatabaseReference ref = mRootref.child("Peta").child("Gondomanan").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -737,7 +750,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                     });
                 }
 
-                if (Integer.parseInt(rank) <= 9 && Integer.parseInt(rank) > 4) {
+                if (Float.parseFloat(rank) < rawas && Float.parseFloat(rank) > wasiag) {
 
 
                     DatabaseReference refx = mRootref.child("Peta").child("Gondomanan").child("geometries").child("0").child("coordinates").child("0").child("0");
@@ -771,7 +784,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                 }
 
-                if (Integer.parseInt(rank) <= 14 && Integer.parseInt(rank) > 9) {
+                if (Float.parseFloat(rank) <= wasiag) {
 
                     DatabaseReference refxx = mRootref.child("Peta").child("Gondomanan").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -816,14 +829,17 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
         //JETIS JETIS //JETIS JETIS //JETIS JETIS //JETIS JETIS //JETIS JETIS //JETIS JETIS //JETIS JETIS
 
 
-        DatabaseReference refffs = mRootref.child("Rangking").child("Jetis").child("Rangking");
+        DatabaseReference refffs = mRootref.child("Batas");
         refffs.addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                rank = dataSnapshot.getValue().toString();
+                rank = dataSnapshot.child("Jetis").child("Netflow").getValue().toString();
+                wasiag = Float.parseFloat(dataSnapshot.child("Wasiag").getValue().toString());
+                rawas = Float.parseFloat(dataSnapshot.child("Rawas").getValue().toString());
 
-                if (Integer.parseInt(rank) <= 4 && Integer.parseInt(rank) >0) {
+
+                if (Float.parseFloat(rank) >= rawas) {
 
                     DatabaseReference ref = mRootref.child("Peta").child("Jetis").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -854,7 +870,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                     });
                 }
 
-                if (Integer.parseInt(rank) <= 9 && Integer.parseInt(rank) > 4) {
+                if (Float.parseFloat(rank) < rawas && Float.parseFloat(rank) > wasiag) {
 
 
                     DatabaseReference refx = mRootref.child("Peta").child("Jetis").child("geometries").child("0").child("coordinates").child("0").child("0");
@@ -888,7 +904,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                 }
 
-                if (Integer.parseInt(rank) <= 14 && Integer.parseInt(rank) > 9) {
+                if (Float.parseFloat(rank) <= wasiag) {
 
                     DatabaseReference refxx = mRootref.child("Peta").child("Jetis").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -932,14 +948,16 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
         //KOTAGEDE KOTAGEDE //KOTAGEDE KOTAGEDE //KOTAGEDE KOTAGEDE //KOTAGEDE KOTAGEDE //KOTAGEDE KOTAGEDE //KOTAGEDE KOTAGEDE
 
-        DatabaseReference reffs = mRootref.child("Rangking").child("Kotagede").child("Rangking");
+        DatabaseReference reffs = mRootref.child("Batas");
         reffs.addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                rank = dataSnapshot.getValue().toString();
+                rank = dataSnapshot.child("Danurejan").child("Netflow").getValue().toString();
+                wasiag = Float.parseFloat(dataSnapshot.child("Wasiag").getValue().toString());
+                rawas = Float.parseFloat(dataSnapshot.child("Rawas").getValue().toString());
 
-                if (Integer.parseInt(rank) <= 4 && Integer.parseInt(rank) >0) {
+                if (Float.parseFloat(rank) >= rawas) {
 
                     DatabaseReference ref = mRootref.child("Peta").child("Kotagede").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -969,7 +987,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                     });
                 }
 
-                if (Integer.parseInt(rank) <= 9 && Integer.parseInt(rank) > 4) {
+                if (Float.parseFloat(rank) < rawas && Float.parseFloat(rank) > wasiag) {
 
 
                     DatabaseReference refx = mRootref.child("Peta").child("Kotagede").child("geometries").child("0").child("coordinates").child("0").child("0");
@@ -1003,7 +1021,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                 }
 
-                if (Integer.parseInt(rank) <= 14 && Integer.parseInt(rank) > 9) {
+                if (Float.parseFloat(rank) <= wasiag) {
 
                     DatabaseReference refxx = mRootref.child("Peta").child("Kotagede").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1047,14 +1065,17 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
         //KRATON KRATON //KRATON KRATON //KRATON KRATON //KRATON KRATON //KRATON KRATON //KRATON KRATON //KRATON KRATON
 
-        DatabaseReference refs = mRootref.child("Rangking").child("Kraton").child("Rangking");
+        DatabaseReference refs = mRootref.child("Batas");
         refs.addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                rank = dataSnapshot.getValue().toString();
+                rank = dataSnapshot.child("Kraton").child("Netflow").getValue().toString();
+                wasiag = Float.parseFloat(dataSnapshot.child("Wasiag").getValue().toString());
+                rawas = Float.parseFloat(dataSnapshot.child("Rawas").getValue().toString());
 
-                if (Integer.parseInt(rank) <= 4 && Integer.parseInt(rank) >0) {
+
+                if (Float.parseFloat(rank) >= rawas) {
 
                     DatabaseReference ref = mRootref.child("Peta").child("Kraton").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1084,7 +1105,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                     });
                 }
 
-                if (Integer.parseInt(rank) <= 9 && Integer.parseInt(rank) > 4) {
+                if (Float.parseFloat(rank) < rawas && Float.parseFloat(rank) > wasiag) {
 
 
                     DatabaseReference refx = mRootref.child("Peta").child("Kraton").child("geometries").child("0").child("coordinates").child("0").child("0");
@@ -1118,7 +1139,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                 }
 
-                if (Integer.parseInt(rank) <= 14 && Integer.parseInt(rank) > 9) {
+                if (Float.parseFloat(rank) <= wasiag) {
 
                     DatabaseReference refxx = mRootref.child("Peta").child("Kraton").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1163,14 +1184,16 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
         //Mantrijeron Mantrijeron //Mantrijeron Mantrijeron //Mantrijeron Mantrijeron //Mantrijeron Mantrijeron //Mantrijeron Mantrijeron
 
 
-        DatabaseReference refxs = mRootref.child("Rangking").child("Mantrijeron").child("Rangking");
+        DatabaseReference refxs = mRootref.child("Batas");
         refxs.addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                rank = dataSnapshot.getValue().toString();
+                rank = dataSnapshot.child("Mantrijeron").child("Netflow").getValue().toString();
+                wasiag = Float.parseFloat(dataSnapshot.child("Wasiag").getValue().toString());
+                rawas = Float.parseFloat(dataSnapshot.child("Rawas").getValue().toString());
 
-                if (Integer.parseInt(rank) <= 4 && Integer.parseInt(rank) >0) {
+                if (Float.parseFloat(rank) >= rawas) {
 
                     DatabaseReference ref = mRootref.child("Peta").child("Mantrijeron").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1200,7 +1223,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                     });
                 }
 
-                if (Integer.parseInt(rank) <= 9 && Integer.parseInt(rank) > 4) {
+                if (Float.parseFloat(rank) < rawas && Float.parseFloat(rank) > wasiag) {
 
 
                     DatabaseReference refx = mRootref.child("Peta").child("Mantrijeron").child("geometries").child("0").child("coordinates").child("0").child("0");
@@ -1234,7 +1257,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                 }
 
-                if (Integer.parseInt(rank) <= 14 && Integer.parseInt(rank) > 9) {
+                if (Float.parseFloat(rank) <= wasiag) {
 
                     DatabaseReference refxx = mRootref.child("Peta").child("Mantrijeron").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1279,14 +1302,16 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
         //Mergangsan Mergangsan //Mergangsan Mergangsan //Mergangsan Mergangsan //Mergangsan Mergangsan //Mergangsan Mergangsan
 
 
-        DatabaseReference resxs = mRootref.child("Rangking").child("Mergangsan").child("Rangking");
+        DatabaseReference resxs = mRootref.child("Batas");
         resxs.addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                rank = dataSnapshot.getValue().toString();
+                rank = dataSnapshot.child("Mergangsan").child("Netflow").getValue().toString();
+                wasiag = Float.parseFloat(dataSnapshot.child("Wasiag").getValue().toString());
+                rawas = Float.parseFloat(dataSnapshot.child("Rawas").getValue().toString());
 
-                if (Integer.parseInt(rank) <= 4 && Integer.parseInt(rank) >0) {
+                if (Float.parseFloat(rank) >= rawas) {
 
                     DatabaseReference ref = mRootref.child("Peta").child("Mergangsan").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1316,7 +1341,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                     });
                 }
 
-                if (Integer.parseInt(rank) <= 9 && Integer.parseInt(rank) > 4) {
+                if (Float.parseFloat(rank) < rawas && Float.parseFloat(rank) > wasiag) {
 
 
                     DatabaseReference refx = mRootref.child("Peta").child("Mergangsan").child("geometries").child("0").child("coordinates").child("0").child("0");
@@ -1350,7 +1375,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                 }
 
-                if (Integer.parseInt(rank) <= 14 && Integer.parseInt(rank) > 9) {
+                if (Float.parseFloat(rank) <= wasiag) {
 
                     DatabaseReference refxx = mRootref.child("Peta").child("Mergangsan").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1395,14 +1420,19 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
         //Ngampilan Ngampilan //Ngampilan Ngampilan //Ngampilan Ngampilan //Ngampilan Ngampilan //Ngampilan Ngampilan
 
 
-        DatabaseReference resss = mRootref.child("Rangking").child("Ngampilan").child("Rangking");
+        DatabaseReference resss = mRootref.child("Batas");
         resss.addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                rank = dataSnapshot.getValue().toString();
+                rank = dataSnapshot.child("Ngampilan").child("Netflow").getValue().toString();
+                wasiag = Float.parseFloat(dataSnapshot.child("Wasiag").getValue().toString());
+                rawas = Float.parseFloat(dataSnapshot.child("Rawas").getValue().toString());
 
-                if (Integer.parseInt(rank) <= 4 && Integer.parseInt(rank) >0) {
+
+
+
+                if (Float.parseFloat(rank) >= rawas) {
 
                     DatabaseReference ref = mRootref.child("Peta").child("Ngampilan").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1432,7 +1462,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                     });
                 }
 
-                if (Integer.parseInt(rank) <= 9 && Integer.parseInt(rank) > 4) {
+                if (Float.parseFloat(rank) < rawas && Float.parseFloat(rank) > wasiag) {
 
 
                     DatabaseReference refx = mRootref.child("Peta").child("Ngampilan").child("geometries").child("0").child("coordinates").child("0").child("0");
@@ -1466,7 +1496,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                 }
 
-                if (Integer.parseInt(rank) <= 14 && Integer.parseInt(rank) > 9) {
+                if (Float.parseFloat(rank) <= wasiag) {
 
                     DatabaseReference refxx = mRootref.child("Peta").child("Ngampilan").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1510,14 +1540,20 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
         //Pakualaman Pakualaman //Pakualaman Pakualaman //Pakualaman Pakualaman //Pakualaman Pakualaman
 
 
-        DatabaseReference reds = mRootref.child("Rangking").child("Pakualaman").child("Rangking");
+        DatabaseReference reds = mRootref.child("Batas");
         reds.addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                rank = dataSnapshot.getValue().toString();
+                rank = dataSnapshot.child("Pakualaman").child("Netflow").getValue().toString();
+                wasiag = Float.parseFloat(dataSnapshot.child("Wasiag").getValue().toString());
+                rawas = Float.parseFloat(dataSnapshot.child("Rawas").getValue().toString());
 
-                if (Integer.parseInt(rank) <= 4 && Integer.parseInt(rank) >0) {
+
+
+
+
+                if (Float.parseFloat(rank) >= rawas) {
 
                     DatabaseReference ref = mRootref.child("Peta").child("Pakualaman").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1547,7 +1583,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                     });
                 }
 
-                if (Integer.parseInt(rank) <= 9 && Integer.parseInt(rank) > 4) {
+                if (Float.parseFloat(rank) < rawas && Float.parseFloat(rank) > wasiag) {
 
 
                     DatabaseReference refx = mRootref.child("Peta").child("Pakualaman").child("geometries").child("0").child("coordinates").child("0").child("0");
@@ -1581,7 +1617,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                 }
 
-                if (Integer.parseInt(rank) <= 14 && Integer.parseInt(rank) > 9) {
+                if (Float.parseFloat(rank) <= wasiag) {
 
                     DatabaseReference refxx = mRootref.child("Peta").child("Pakualaman").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1625,14 +1661,17 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
         //Tegalrejo Tegalrejo //Tegalrejo Tegalrejo //Tegalrejo Tegalrejo //Tegalrejo Tegalrejo //Tegalrejo Tegalrejo
 
-        DatabaseReference redsd = mRootref.child("Rangking").child("Tegalrejo").child("Rangking");
+        DatabaseReference redsd = mRootref.child("Batas");
         redsd.addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                rank = dataSnapshot.getValue().toString();
+                rank = dataSnapshot.child("Tegalrejo").child("Netflow").getValue().toString();
+                wasiag = Float.parseFloat(dataSnapshot.child("Wasiag").getValue().toString());
+                rawas = Float.parseFloat(dataSnapshot.child("Rawas").getValue().toString());
 
-                if (Integer.parseInt(rank) <= 4 && Integer.parseInt(rank) >0) {
+
+                if (Float.parseFloat(rank) >= rawas) {
 
                     DatabaseReference ref = mRootref.child("Peta").child("Tegalrejo").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1662,7 +1701,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                     });
                 }
 
-                if (Integer.parseInt(rank) <= 9 && Integer.parseInt(rank) > 4) {
+                if (Float.parseFloat(rank) < rawas && Float.parseFloat(rank) > wasiag) {
 
 
                     DatabaseReference refx = mRootref.child("Peta").child("Tegalrejo").child("geometries").child("0").child("coordinates").child("0").child("0");
@@ -1696,7 +1735,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                 }
 
-                if (Integer.parseInt(rank) <= 14 && Integer.parseInt(rank) > 9) {
+                if (Float.parseFloat(rank) <= wasiag) {
 
                     DatabaseReference refxx = mRootref.child("Peta").child("Tegalrejo").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1741,14 +1780,19 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
         //Umbulharjo Umbulharjo //Umbulharjo Umbulharjo //Umbulharjo Umbulharjo //Umbulharjo Umbulharjo //Umbulharjo Umbulharjo
 
 
-        DatabaseReference rrdsd = mRootref.child("Rangking").child("Umbulharjo").child("Rangking");
+        DatabaseReference rrdsd = mRootref.child("Batas");
         rrdsd.addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                rank = dataSnapshot.getValue().toString();
+                rank = dataSnapshot.child("Umbulharjo").child("Netflow").getValue().toString();
+                wasiag = Float.parseFloat(dataSnapshot.child("Wasiag").getValue().toString());
+                rawas = Float.parseFloat(dataSnapshot.child("Rawas").getValue().toString());
 
-                if (Integer.parseInt(rank) <= 4 && Integer.parseInt(rank) >0) {
+
+
+
+                if (Float.parseFloat(rank) >= rawas) {
 
                     DatabaseReference ref = mRootref.child("Peta").child("Umbulharjo").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1778,7 +1822,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                     });
                 }
 
-                if (Integer.parseInt(rank) <= 9 && Integer.parseInt(rank) > 4) {
+                if (Float.parseFloat(rank) < rawas && Float.parseFloat(rank) > wasiag) {
 
 
                     DatabaseReference refx = mRootref.child("Peta").child("Umbulharjo").child("geometries").child("0").child("coordinates").child("0").child("0");
@@ -1812,7 +1856,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                 }
 
-                if (Integer.parseInt(rank) <= 14 && Integer.parseInt(rank) > 9) {
+                if (Float.parseFloat(rank) <= wasiag) {
 
                     DatabaseReference refxx = mRootref.child("Peta").child("Umbulharjo").child("geometries").child("0").child("coordinates").child("0").child("0");
 

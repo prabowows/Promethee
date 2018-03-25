@@ -55,6 +55,18 @@
 
     </TableLayout>
 
+    <EditText
+        android:inputType="number"
+        android:hint="Skor Parameter Rawan | Waspada"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:inputType="number"
+        android:hint="Skor Parameter Waspada | Aman"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <ImageButton
         android:layout_marginTop="10dp"
         android:background="@drawable/btedit"

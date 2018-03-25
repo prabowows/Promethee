@@ -227,6 +227,7 @@ public class ListviewHasilActivity extends AppCompatActivity {
                     arrLeaving[i] = (1 / 13.0d) * arrLeaving[i];
                     arrEntering[i] = (1 / 13.0d) * arrEntering[i];
                     arrNet[i] = arrLeaving[i] - arrEntering[i];
+                    mRootref.child("Batas").child(namaKecamatan[i]).child("Netflow").setValue(String.format("%.3f",arrNet[i]));
                 }
 
                 //Promethee Ranking
@@ -239,7 +240,7 @@ public class ListviewHasilActivity extends AppCompatActivity {
                         }
                     }
                     ListviewHasilActivity.values[i] = namaKecamatan[pos];
-                    mRootref.child("Rangking").child(namaKecamatan[pos]).child("Rangking").setValue(i+1);
+
                     arrNet[pos] = -100000;
                 }
 
@@ -268,22 +269,47 @@ public class ListviewHasilActivity extends AppCompatActivity {
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(final int position, View convertView, ViewGroup parent) {
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View rowView = inflater.inflate(R.layout.activity_item_listview_hasil, parent, false);
-            TextView textView = (TextView) rowView.findViewById(R.id.textListviewHasil);
-            ImageView imageView = (ImageView) rowView.findViewById(R.id.imageViewhasil);
+            final View rowView = inflater.inflate(R.layout.activity_item_listview_hasil, parent, false);
+            final TextView textView = (TextView) rowView.findViewById(R.id.textListviewHasil);
+            final ImageView imageView = (ImageView) rowView.findViewById(R.id.imageViewhasil);
             textView.setText(values[position]);
-            if (position <= 3) {
+
+            DatabaseReference event = mRootref.child("Batas");
+            event.addListenerForSingleValueEvent(new ValueEventListener() {
+
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+
+
+                        Double netFlow = Double.parseDouble(dataSnapshot.child(values[position]).getValue().toString());
+
+                    Float rawas = Float.parseFloat(dataSnapshot.child("Rawas").getValue().toString());
+                    Float wasiag = Float.parseFloat(dataSnapshot.child("Wasiag").getValue().toString());
+
+
+
+                    if (netFlow >= rawas ) {
                 textView.setBackgroundResource(R.color.Merah);
                 imageView.setBackgroundResource(R.color.Merah);
 
-            } else if (position <= 8) {textView.setBackgroundResource(R.color.colorPrimary);
+            } else if (netFlow < rawas && netFlow > wasiag)
+                    {textView.setBackgroundResource(R.color.colorPrimary);
             imageView.setBackgroundResource(R.color.colorPrimary);}
-            else if (position <= 14) {textView.setBackgroundResource(R.color.Hijau);
+            else if (netFlow <= wasiag) {textView.setBackgroundResource(R.color.Hijau);
             imageView.setBackgroundResource(R.color.Hijau);}
 
+
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                }
+
+            });
             return rowView;
         }
     }

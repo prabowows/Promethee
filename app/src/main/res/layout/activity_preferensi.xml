@@ -60,7 +60,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="K1"
+                android:text="Curah Hujan"
                 android:visibility="gone" />
 
             <TextView
@@ -76,7 +76,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="K2"
+                android:text="Jumlah Lahan"
+                android:textSize="4dp"
                 android:visibility="gone" />
 
             <TextView
@@ -92,7 +93,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="K3"
+                android:text="Sumber Air"
+                android:textSize="4dp"
                 android:visibility="gone" />
 
             <TextView
@@ -108,7 +110,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="K4"
+                android:text="Kelembaban"
+                android:textSize="4dp"
                 android:visibility="gone" />
 
             <TextView
@@ -124,7 +127,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="K5"
+                android:textSize="6dp"
+                android:text="Kepadatan \n Penduduk"
                 android:visibility="gone" />
 
             <TextView
@@ -140,7 +144,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="K6"
+                android:text="Suhu Rata Rata"
+                android:textSize="4dp"
                 android:visibility="gone" />
 
             <TextView

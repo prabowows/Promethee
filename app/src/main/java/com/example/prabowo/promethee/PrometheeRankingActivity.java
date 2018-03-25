@@ -10,11 +10,17 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import static com.example.prabowo.promethee.MultiKriteriaActivity.namaKecamatan;
 
 public class PrometheeRankingActivity extends AppCompatActivity {
 
-    DatabaseReference mRootref;
+    DatabaseReference mRootref = FirebaseDatabase.getInstance().getReference();;
     TableRow row;
     TableLayout tableLayout, tableLayoutA;
     TextView Kecamatan, Leaving, Entering, Net, Ranking, Keterangan;
@@ -54,6 +60,8 @@ public class PrometheeRankingActivity extends AppCompatActivity {
             arrLeaving[i] =  arrLeaving[i]/13.0d;
             arrEntering[i] = arrEntering[i]/13.0d;
             arrNet[i] = arrLeaving[i] - arrEntering[i];
+            mRootref.child("Batas").child(namaKecamatan[i]).child("Netflow").setValue(arrNet[i]);
+
         }
 
         for (int i = 0; i < 14; i++) {
@@ -67,12 +75,31 @@ public class PrometheeRankingActivity extends AppCompatActivity {
             InsertRow(MultiKriteriaActivity.namaKecamatan[pos], String.format("%.3f", arrLeaving[pos]), String.format("%.3f", arrEntering[pos]), String.format("%.3f", arrNet[pos]), Integer.toString(i + 1));
             ListviewHasilActivity.values[i] = MultiKriteriaActivity.namaKecamatan[pos];
             arrNet[pos] = -100000;
+
         }
         progressDialog.dismiss();
     }
 
 
-    public void InsertRow(String Kecamatan, String Leaving, String Entering, String Net, String Rank) {
+    public void InsertRow(final String Kecamatan, final String Leaving, final String Entering, final String Net, final String Rank) {
+
+
+        DatabaseReference event = mRootref.child("Batas");
+        event.addListenerForSingleValueEvent(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                    Float rawas = Float.parseFloat(dataSnapshot.child("Rawas").getValue().toString());
+                Float wasiag = Float.parseFloat(dataSnapshot.child("Wasiag").getValue().toString());
+
+
+
+
+
+
+
+
+
         tableLayout = findViewById(R.id.tableLayoutIdRank);
         tableLayoutA = findViewById(R.id.tableLayoutIdARank);
         row = (TableRow) getLayoutInflater().inflate(R.layout.activity_promethee_ranking_row, null);
@@ -82,12 +109,21 @@ public class PrometheeRankingActivity extends AppCompatActivity {
         ((TextView) row.findViewById(R.id.EnteringFlow)).setText(Entering);
         ((TextView) row.findViewById(R.id.NetFlow)).setText(Net);
         ((TextView) row.findViewById(R.id.Ranking)).setText(Rank);
-        if (Integer.parseInt(Rank) < 5)
+        if (Double.parseDouble(Net.replace(",",".")) >= rawas)
             ((TextView) row.findViewById(R.id.Keterangan)).setText("Rawan");
-        else if (Integer.parseInt(Rank) < 10) ((TextView) row.findViewById(R.id.Keterangan)).setText("Waspada");
+        else if (Double.parseDouble(Net.replace(",",".")) > wasiag && Double.parseDouble(Net.replace(",",".")) < rawas ) ((TextView) row.findViewById(R.id.Keterangan)).setText("Waspada");
         else ((TextView) row.findViewById(R.id.Keterangan)).setText("Aman");
 
         tableLayoutA.addView(row);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+
+        });
+
     }
     public void onBackPressed() {
         finish();
