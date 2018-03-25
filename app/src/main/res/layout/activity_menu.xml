@@ -67,8 +67,7 @@
             android:id="@+id/ETbatasatas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Skor Parameter Rawan | Waspada"
-            android:inputType="number" />
+            android:hint="Skor Parameter Rawan | Waspada" />
 
         <Button
             android:id="@+id/BTbatasatas"
@@ -88,8 +87,7 @@
             android:id="@+id/ETbatasbawah"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Skor Parameter Waspada | Aman"
-            android:inputType="number" />
+            android:hint="Skor Parameter Waspada | Aman" />
 
         <Button
             android:id="@+id/BTbatasbawah"

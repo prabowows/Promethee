@@ -24,7 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
-    DatabaseReference mRootref;
+    DatabaseReference mRootref = FirebaseDatabase.getInstance().getReference();;
     TableRow row;
     TableLayout tableLayout;
     Button Hapus,BTbatasatas,BTbatasbawah;
@@ -65,6 +65,23 @@ public class MainActivity extends AppCompatActivity {
         BTbatasatas=findViewById(R.id.BTbatasatas);
         BTbatasbawah=findViewById(R.id.BTbatasbawah);
 
+        BTbatasatas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mRootref.child("Batas").child("Rawas").setValue(ETbatasatas.getText().toString());
+                Toast.makeText(MainActivity.this, "Parameter Telah Diperbarui menjadi "+ ETbatasatas.getText().toString(), Toast.LENGTH_LONG).show();
+            }
+        });
+
+        BTbatasbawah.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mRootref.child("Batas").child("Wasiag").setValue(ETbatasbawah.getText().toString());
+                Toast.makeText(MainActivity.this, "Parameter Telah Diperbarui menjadi "+ ETbatasbawah.getText().toString(), Toast.LENGTH_LONG).show();
+            }
+        });
 
 
         HapusShow.setOnClickListener(new View.OnClickListener() {

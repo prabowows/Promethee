@@ -8,11 +8,79 @@
     tools:context="com.example.prabowo.promethee.PreferensiActivity">
 
     <LinearLayout
+        android:paddingTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
         android:gravity="right"
         android:background="@color/colorPrimary"
         android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_margin="1dp"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="K1: Curah Hujan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="K2: Jumlah Lahan "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+
+    </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_margin="1dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="K3: Sumber Air"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="K4: Kelembaban "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_margin="1dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="K5: Kepadatan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_gravity="left"
+                android:text="K6: Suhu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+
+
+
+
+
 
         <ImageView
             android:id="@+id/checkNextIndeks"
@@ -60,7 +128,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Curah Hujan"
+                android:text="K1"
                 android:visibility="gone" />
 
             <TextView
@@ -76,8 +144,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Jumlah Lahan"
-                android:textSize="4dp"
+                android:text="K2"
                 android:visibility="gone" />
 
             <TextView
@@ -93,8 +160,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Sumber Air"
-                android:textSize="4dp"
+                android:text="K3"
                 android:visibility="gone" />
 
             <TextView
@@ -110,8 +176,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Kelembaban"
-                android:textSize="4dp"
+                android:text="K4"
                 android:visibility="gone" />
 
             <TextView
@@ -127,8 +192,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textSize="6dp"
-                android:text="Kepadatan \n Penduduk"
+                android:text="K5"
                 android:visibility="gone" />
 
             <TextView
@@ -144,8 +208,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Suhu Rata Rata"
-                android:textSize="4dp"
+                android:text="K6"
                 android:visibility="gone" />
 
             <TextView
@@ -423,6 +486,7 @@
 
 
 </android.support.v4.widget.NestedScrollView>
+
 
 
 
