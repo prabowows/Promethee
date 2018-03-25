@@ -27,9 +27,9 @@ public class MainActivity extends AppCompatActivity {
     DatabaseReference mRootref;
     TableRow row;
     TableLayout tableLayout;
-    Button Hapus;
+    Button Hapus,BTbatasatas,BTbatasbawah;
     ImageButton Tambah, TambahShow, HapusShow, Selesai, BThasil,BTeditV;
-    EditText editHapus, editTambah1, editTambah2, editTambah3, editBatas1, editBatas2,editGolongan1,editGolongan2,editGolongan3,editGolongan4;
+    EditText ETbatasbawah,ETbatasatas,editHapus, editTambah1, editTambah2, editTambah3, editBatas1, editBatas2,editGolongan1,editGolongan2,editGolongan3,editGolongan4;
     RadioButton CBmax,CBmin,CBkual,CBkuan;
     private static String a="0";
     @Override
@@ -60,11 +60,20 @@ public class MainActivity extends AppCompatActivity {
         CBmin = findViewById(R.id.CBmin);
         CBkual=findViewById(R.id.CBkual);
         CBkuan=findViewById(R.id.CBkuan);
+        ETbatasatas=findViewById(R.id.ETbatasatas);
+        ETbatasbawah=findViewById(R.id.ETbatasbawah);
+        BTbatasatas=findViewById(R.id.BTbatasatas);
+        BTbatasbawah=findViewById(R.id.BTbatasbawah);
+
 
 
         HapusShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ETbatasatas.setVisibility(view.GONE);
+                BTbatasatas.setVisibility(view.GONE);
+                ETbatasbawah.setVisibility(view.GONE);
+                BTbatasbawah.setVisibility(view.GONE);
                 editTambah1.setVisibility(view.GONE);
                 editTambah2.setVisibility(view.GONE);
                 editTambah3.setVisibility(view.GONE);
@@ -83,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
-                startActivity(new Intent(MainActivity.this, ListviewHasilActivity.class));
+                startActivity(new Intent(MainActivity.this, HasilAkhir.class));
             }
         });
 
@@ -144,6 +153,10 @@ public class MainActivity extends AppCompatActivity {
         TambahShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ETbatasatas.setVisibility(view.GONE);
+                BTbatasatas.setVisibility(view.GONE);
+                ETbatasbawah.setVisibility(view.GONE);
+                BTbatasbawah.setVisibility(view.GONE);
                 CBkual.setVisibility(view.VISIBLE);
                 CBkuan.setVisibility(view.VISIBLE);
                 CBmax.setVisibility(view.VISIBLE);

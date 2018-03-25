@@ -55,17 +55,52 @@
 
     </TableLayout>
 
-    <EditText
-        android:inputType="number"
-        android:hint="Skor Parameter Rawan | Waspada"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
-    <EditText
-        android:inputType="number"
-        android:hint="Skor Parameter Waspada | Aman"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/ETbatasatas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Skor Parameter Rawan | Waspada"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/BTbatasatas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/ETbatasbawah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Skor Parameter Waspada | Aman"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/BTbatasbawah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update" />
+
+    </LinearLayout>
+
+
+
 
     <ImageButton
         android:layout_marginTop="10dp"
@@ -414,4 +449,8 @@
 
     </LinearLayout>
 
+
+
 </LinearLayout>
+
+

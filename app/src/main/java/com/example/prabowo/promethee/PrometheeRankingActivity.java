@@ -44,7 +44,7 @@ public class PrometheeRankingActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
-                Intent intent = new Intent(PrometheeRankingActivity.this, ListviewHasilActivity.class);
+                Intent intent = new Intent(PrometheeRankingActivity.this, HasilAkhir.class);
                 intent.putExtra("kode", "pindah");
                 startActivity(intent);
             }

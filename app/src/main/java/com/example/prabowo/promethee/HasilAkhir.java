@@ -111,7 +111,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
         mMap = googleMap;
         Bundle extras = getIntent().getExtras();
-        String Koordinat = extras.getString("Koordinat");
+        String Koordinat = "Pakualaman";
         LatLng Gondokusuman = new LatLng(-7.786141, 110.380372);
         LatLng Danurejan = new LatLng(-7.792714, 110.372069);
         LatLng Gedongtengen = new LatLng(-7.791625, 110.361137);
@@ -188,7 +188,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
         LatLng Pakualaman = new LatLng(-7.799547, 110.376136);
         if(Koordinat.equals("Pakualaman")){
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Pakualaman, 15));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Pakualaman, 13));
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             mMap.addMarker(new MarkerOptions().position(Pakualaman).title(Koordinat));}
 
@@ -242,7 +242,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                     rawas = Float.parseFloat(dataSnapshot.child("Rawas").getValue().toString());
 
 
-            if (Float.parseFloat(rank) >= rawas ) {
+            if (Float.parseFloat(rank.replace(",",".")) >= rawas ) {
 
                 DatabaseReference ref = mRootref.child("Peta").child("Gondokusuman").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -273,7 +273,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                 });
             }
 
-            if (Float.parseFloat(rank) < rawas && Float.parseFloat(rank) > wasiag) {
+            if (Float.parseFloat(rank.replace(",",".")) < rawas && Float.parseFloat(rank.replace(",",".")) > wasiag) {
                 alamat = "Danurejan";
 
                 DatabaseReference refx = mRootref.child("Peta").child("Gondokusuman").child("geometries").child("0").child("coordinates").child("0").child("0");
@@ -307,7 +307,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
             }
 
-                if (Float.parseFloat(rank) <= wasiag ) {
+                if (Float.parseFloat(rank.replace(",",".")) <= wasiag ) {
 
                     DatabaseReference refxx = mRootref.child("Peta").child("Gondokusuman").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -360,7 +360,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                 wasiag = Float.parseFloat(dataSnapshot.child("Wasiag").getValue().toString());
                 rawas = Float.parseFloat(dataSnapshot.child("Rawas").getValue().toString());
 
-                if (Float.parseFloat(rank) >= rawas ) {
+                if (Float.parseFloat(rank.replace(",",".")) >= rawas ) {
 
                     DatabaseReference ref = mRootref.child("Peta").child("Danurejan").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -390,7 +390,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                     });
                 }
 
-                if (Float.parseFloat(rank) < rawas && Float.parseFloat(rank) > wasiag) {
+                if (Float.parseFloat(rank.replace(",",".")) < rawas && Float.parseFloat(rank.replace(",",".")) > wasiag) {
                     alamat = "Danurejan";
 
                     DatabaseReference refx = mRootref.child("Peta").child("Danurejan").child("geometries").child("0").child("coordinates").child("0").child("0");
@@ -427,7 +427,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                 }
 
-                if (Float.parseFloat(rank) <= wasiag) {
+                if (Float.parseFloat(rank.replace(",",".")) <= wasiag) {
 
                     DatabaseReference refxx = mRootref.child("Peta").child("Danurejan").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -482,7 +482,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                 wasiag = Float.parseFloat(dataSnapshot.child("Wasiag").getValue().toString());
                 rawas = Float.parseFloat(dataSnapshot.child("Rawas").getValue().toString());
 
-                if (Float.parseFloat(rank) >= rawas) {
+                if (Float.parseFloat(rank.replace(",",".")) >= rawas) {
 
                     DatabaseReference ref = mRootref.child("Peta").child("Wirobrajan").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -512,7 +512,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                     });
                 }
 
-                if (Float.parseFloat(rank) < rawas && Float.parseFloat(rank) > wasiag) {
+                if (Float.parseFloat(rank.replace(",",".")) < rawas && Float.parseFloat(rank.replace(",",".")) > wasiag) {
                     alamat = "Danurejan";
 
                     DatabaseReference refx = mRootref.child("Peta").child("Wirobrajan").child("geometries").child("0").child("coordinates").child("0").child("0");
@@ -546,7 +546,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                 }
 
-                if (Float.parseFloat(rank) <= wasiag) {
+                if (Float.parseFloat(rank.replace(",",".")) <= wasiag) {
 
                     DatabaseReference refxx = mRootref.child("Peta").child("Wirobrajan").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -601,7 +601,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                 wasiag = Float.parseFloat(dataSnapshot.child("Wasiag").getValue().toString());
                 rawas = Float.parseFloat(dataSnapshot.child("Rawas").getValue().toString());
 
-                if (Float.parseFloat(rank) >= rawas) {
+                if (Float.parseFloat(rank.replace(",",".")) >= rawas) {
 
                     DatabaseReference ref = mRootref.child("Peta").child("Gedongtengen").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -631,7 +631,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                     });
                 }
 
-                if (Float.parseFloat(rank) < rawas && Float.parseFloat(rank) > wasiag) {
+                if (Float.parseFloat(rank.replace(",",".")) < rawas && Float.parseFloat(rank.replace(",",".")) > wasiag) {
 
 
                     DatabaseReference refx = mRootref.child("Peta").child("Gedongtengen").child("geometries").child("0").child("coordinates").child("0").child("0");
@@ -665,7 +665,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                 }
 
-                if (Float.parseFloat(rank) <= wasiag) {
+                if (Float.parseFloat(rank.replace(",",".")) <= wasiag) {
 
                     DatabaseReference refxx = mRootref.child("Peta").child("Gedongtengen").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -720,7 +720,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                 rawas = Float.parseFloat(dataSnapshot.child("Rawas").getValue().toString());
 
 
-                if (Float.parseFloat(rank) >= rawas) {
+                if (Float.parseFloat(rank.replace(",",".")) >= rawas) {
 
                     DatabaseReference ref = mRootref.child("Peta").child("Gondomanan").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -750,7 +750,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                     });
                 }
 
-                if (Float.parseFloat(rank) < rawas && Float.parseFloat(rank) > wasiag) {
+                if (Float.parseFloat(rank.replace(",",".")) < rawas && Float.parseFloat(rank.replace(",",".")) > wasiag) {
 
 
                     DatabaseReference refx = mRootref.child("Peta").child("Gondomanan").child("geometries").child("0").child("coordinates").child("0").child("0");
@@ -784,7 +784,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                 }
 
-                if (Float.parseFloat(rank) <= wasiag) {
+                if (Float.parseFloat(rank.replace(",",".")) <= wasiag) {
 
                     DatabaseReference refxx = mRootref.child("Peta").child("Gondomanan").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -839,7 +839,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                 rawas = Float.parseFloat(dataSnapshot.child("Rawas").getValue().toString());
 
 
-                if (Float.parseFloat(rank) >= rawas) {
+                if (Float.parseFloat(rank.replace(",",".")) >= rawas) {
 
                     DatabaseReference ref = mRootref.child("Peta").child("Jetis").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -870,7 +870,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                     });
                 }
 
-                if (Float.parseFloat(rank) < rawas && Float.parseFloat(rank) > wasiag) {
+                if (Float.parseFloat(rank.replace(",",".")) < rawas && Float.parseFloat(rank.replace(",",".")) > wasiag) {
 
 
                     DatabaseReference refx = mRootref.child("Peta").child("Jetis").child("geometries").child("0").child("coordinates").child("0").child("0");
@@ -904,7 +904,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                 }
 
-                if (Float.parseFloat(rank) <= wasiag) {
+                if (Float.parseFloat(rank.replace(",",".")) <= wasiag) {
 
                     DatabaseReference refxx = mRootref.child("Peta").child("Jetis").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -957,7 +957,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                 wasiag = Float.parseFloat(dataSnapshot.child("Wasiag").getValue().toString());
                 rawas = Float.parseFloat(dataSnapshot.child("Rawas").getValue().toString());
 
-                if (Float.parseFloat(rank) >= rawas) {
+                if (Float.parseFloat(rank.replace(",",".")) >= rawas) {
 
                     DatabaseReference ref = mRootref.child("Peta").child("Kotagede").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -987,7 +987,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                     });
                 }
 
-                if (Float.parseFloat(rank) < rawas && Float.parseFloat(rank) > wasiag) {
+                if (Float.parseFloat(rank.replace(",",".")) < rawas && Float.parseFloat(rank.replace(",",".")) > wasiag) {
 
 
                     DatabaseReference refx = mRootref.child("Peta").child("Kotagede").child("geometries").child("0").child("coordinates").child("0").child("0");
@@ -1021,7 +1021,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                 }
 
-                if (Float.parseFloat(rank) <= wasiag) {
+                if (Float.parseFloat(rank.replace(",",".")) <= wasiag) {
 
                     DatabaseReference refxx = mRootref.child("Peta").child("Kotagede").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1075,7 +1075,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                 rawas = Float.parseFloat(dataSnapshot.child("Rawas").getValue().toString());
 
 
-                if (Float.parseFloat(rank) >= rawas) {
+                if (Float.parseFloat(rank.replace(",",".")) >= rawas) {
 
                     DatabaseReference ref = mRootref.child("Peta").child("Kraton").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1105,7 +1105,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                     });
                 }
 
-                if (Float.parseFloat(rank) < rawas && Float.parseFloat(rank) > wasiag) {
+                if (Float.parseFloat(rank.replace(",",".")) < rawas && Float.parseFloat(rank.replace(",",".")) > wasiag) {
 
 
                     DatabaseReference refx = mRootref.child("Peta").child("Kraton").child("geometries").child("0").child("coordinates").child("0").child("0");
@@ -1139,7 +1139,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                 }
 
-                if (Float.parseFloat(rank) <= wasiag) {
+                if (Float.parseFloat(rank.replace(",",".")) <= wasiag) {
 
                     DatabaseReference refxx = mRootref.child("Peta").child("Kraton").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1193,7 +1193,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                 wasiag = Float.parseFloat(dataSnapshot.child("Wasiag").getValue().toString());
                 rawas = Float.parseFloat(dataSnapshot.child("Rawas").getValue().toString());
 
-                if (Float.parseFloat(rank) >= rawas) {
+                if (Float.parseFloat(rank.replace(",",".")) >= rawas) {
 
                     DatabaseReference ref = mRootref.child("Peta").child("Mantrijeron").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1223,7 +1223,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                     });
                 }
 
-                if (Float.parseFloat(rank) < rawas && Float.parseFloat(rank) > wasiag) {
+                if (Float.parseFloat(rank.replace(",",".")) < rawas && Float.parseFloat(rank.replace(",",".")) > wasiag) {
 
 
                     DatabaseReference refx = mRootref.child("Peta").child("Mantrijeron").child("geometries").child("0").child("coordinates").child("0").child("0");
@@ -1257,7 +1257,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                 }
 
-                if (Float.parseFloat(rank) <= wasiag) {
+                if (Float.parseFloat(rank.replace(",",".")) <= wasiag) {
 
                     DatabaseReference refxx = mRootref.child("Peta").child("Mantrijeron").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1311,7 +1311,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                 wasiag = Float.parseFloat(dataSnapshot.child("Wasiag").getValue().toString());
                 rawas = Float.parseFloat(dataSnapshot.child("Rawas").getValue().toString());
 
-                if (Float.parseFloat(rank) >= rawas) {
+                if (Float.parseFloat(rank.replace(",",".")) >= rawas) {
 
                     DatabaseReference ref = mRootref.child("Peta").child("Mergangsan").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1341,7 +1341,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                     });
                 }
 
-                if (Float.parseFloat(rank) < rawas && Float.parseFloat(rank) > wasiag) {
+                if (Float.parseFloat(rank.replace(",",".")) < rawas && Float.parseFloat(rank.replace(",",".")) > wasiag) {
 
 
                     DatabaseReference refx = mRootref.child("Peta").child("Mergangsan").child("geometries").child("0").child("coordinates").child("0").child("0");
@@ -1375,7 +1375,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                 }
 
-                if (Float.parseFloat(rank) <= wasiag) {
+                if (Float.parseFloat(rank.replace(",",".")) <= wasiag) {
 
                     DatabaseReference refxx = mRootref.child("Peta").child("Mergangsan").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1432,7 +1432,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
 
 
-                if (Float.parseFloat(rank) >= rawas) {
+                if (Float.parseFloat(rank.replace(",",".")) >= rawas) {
 
                     DatabaseReference ref = mRootref.child("Peta").child("Ngampilan").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1462,7 +1462,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                     });
                 }
 
-                if (Float.parseFloat(rank) < rawas && Float.parseFloat(rank) > wasiag) {
+                if (Float.parseFloat(rank.replace(",",".")) < rawas && Float.parseFloat(rank.replace(",",".")) > wasiag) {
 
 
                     DatabaseReference refx = mRootref.child("Peta").child("Ngampilan").child("geometries").child("0").child("coordinates").child("0").child("0");
@@ -1496,7 +1496,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                 }
 
-                if (Float.parseFloat(rank) <= wasiag) {
+                if (Float.parseFloat(rank.replace(",",".")) <= wasiag) {
 
                     DatabaseReference refxx = mRootref.child("Peta").child("Ngampilan").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1553,7 +1553,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
 
 
-                if (Float.parseFloat(rank) >= rawas) {
+                if (Float.parseFloat(rank.replace(",",".")) >= rawas) {
 
                     DatabaseReference ref = mRootref.child("Peta").child("Pakualaman").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1583,7 +1583,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                     });
                 }
 
-                if (Float.parseFloat(rank) < rawas && Float.parseFloat(rank) > wasiag) {
+                if (Float.parseFloat(rank.replace(",",".")) < rawas && Float.parseFloat(rank.replace(",",".")) > wasiag) {
 
 
                     DatabaseReference refx = mRootref.child("Peta").child("Pakualaman").child("geometries").child("0").child("coordinates").child("0").child("0");
@@ -1617,7 +1617,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                 }
 
-                if (Float.parseFloat(rank) <= wasiag) {
+                if (Float.parseFloat(rank.replace(",",".")) <= wasiag) {
 
                     DatabaseReference refxx = mRootref.child("Peta").child("Pakualaman").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1671,7 +1671,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                 rawas = Float.parseFloat(dataSnapshot.child("Rawas").getValue().toString());
 
 
-                if (Float.parseFloat(rank) >= rawas) {
+                if (Float.parseFloat(rank.replace(",",".")) >= rawas) {
 
                     DatabaseReference ref = mRootref.child("Peta").child("Tegalrejo").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1701,7 +1701,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                     });
                 }
 
-                if (Float.parseFloat(rank) < rawas && Float.parseFloat(rank) > wasiag) {
+                if (Float.parseFloat(rank.replace(",",".")) < rawas && Float.parseFloat(rank.replace(",",".")) > wasiag) {
 
 
                     DatabaseReference refx = mRootref.child("Peta").child("Tegalrejo").child("geometries").child("0").child("coordinates").child("0").child("0");
@@ -1735,7 +1735,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                 }
 
-                if (Float.parseFloat(rank) <= wasiag) {
+                if (Float.parseFloat(rank.replace(",",".")) <= wasiag) {
 
                     DatabaseReference refxx = mRootref.child("Peta").child("Tegalrejo").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1792,7 +1792,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
 
 
-                if (Float.parseFloat(rank) >= rawas) {
+                if (Float.parseFloat(rank.replace(",",".")) >= rawas) {
 
                     DatabaseReference ref = mRootref.child("Peta").child("Umbulharjo").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1822,7 +1822,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
                     });
                 }
 
-                if (Float.parseFloat(rank) < rawas && Float.parseFloat(rank) > wasiag) {
+                if (Float.parseFloat(rank.replace(",",".")) < rawas && Float.parseFloat(rank.replace(",",".")) > wasiag) {
 
 
                     DatabaseReference refx = mRootref.child("Peta").child("Umbulharjo").child("geometries").child("0").child("coordinates").child("0").child("0");
@@ -1856,7 +1856,7 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
                 }
 
-                if (Float.parseFloat(rank) <= wasiag) {
+                if (Float.parseFloat(rank.replace(",",".")) <= wasiag) {
 
                     DatabaseReference refxx = mRootref.child("Peta").child("Umbulharjo").child("geometries").child("0").child("coordinates").child("0").child("0");
 
@@ -1903,7 +1903,10 @@ public class HasilAkhir extends FragmentActivity implements OnMapReadyCallback {
 
     public void onBackPressed() {
         finish();
-        startActivity(new Intent(HasilAkhir.this, ListviewHasilActivity.class));
+        Bundle extras = getIntent().getExtras();
+        if(extras != null)
+            startActivity(new Intent(HasilAkhir.this, PrometheeRankingActivity.class));
+        else startActivity(new Intent(HasilAkhir.this, MainActivity.class));
     }
 
 
